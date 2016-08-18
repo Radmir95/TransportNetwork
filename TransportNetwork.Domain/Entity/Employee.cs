@@ -1,4 +1,4 @@
-﻿namespace TransportNetwork.Test
+﻿namespace TransportNetwork.Domain.Entity
 {
     public class Employee
     {
