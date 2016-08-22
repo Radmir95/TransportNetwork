@@ -38,19 +38,15 @@ namespace TransportNetwork.Test
 
         }
 
-        /*[Test]
-        public void UpateInformationAboutEmployeeInCarrierCompany()
+        [Test]
+        public void AddNewBusInCarrierCompany()
         {
+            
+            Bus bus = new Bus();
+            carrierCompany.AddNewBus(bus);
+            Assert.That(carrierCompany.HasBus(bus), Is.True);
 
-            Employee employeeWithOldInformation = new Employee();
-            Employee employeeWithNewInformation = new Employee();
-
-            carrierCompany.AddNewEmployee(employeeWithOldInformation);
-            carrierCompany.UpdateEmployeeInformation(employeeWithNewInformation);
-
-            Assert.That(carrierCompany.HasEmployee(employeeWithNewInformation), Is.True);
-
-        }*/
+        }
 
 
         

@@ -6,11 +6,12 @@ namespace TransportNetwork.Domain.Entity
     public class CarrierCompany
     {
         private List<Employee> Employees { get; }
-        private List<Bus> Busses { get; set; }
+        private List<Bus> Busses { get; }
 
         public CarrierCompany()
         {
             Employees = Employees ?? new List<Employee>();
+            Busses = Busses ?? new List<Bus>();
         }
 
         public void AddNewEmployee(Employee newEmployee)
@@ -28,6 +29,14 @@ namespace TransportNetwork.Domain.Entity
             Employees.Remove(fireEmployee);
         }
 
-        
+        public void AddNewBus(Bus bus)
+        {
+            Busses.Add(bus);
+        }
+
+        public bool HasBus(Bus bus)
+        {
+            return Busses.Contains(bus);
+        }
     }
 }
