@@ -59,5 +59,23 @@ namespace TransportNetwork.WebFormsApplication.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Главная форма.
+        /// </summary>
+        internal static string ControlForm_InitializeComponent_Главная_форма {
+            get {
+                return ResourceManager.GetString("ControlForm_InitializeComponent_Главная_форма", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Название.
+        /// </summary>
+        internal static string ControlForm_InitializeComponent_Название {
+            get {
+                return ResourceManager.GetString("ControlForm_InitializeComponent_Название", resourceCulture);
+            }
+        }
     }
 }
