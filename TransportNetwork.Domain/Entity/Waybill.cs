@@ -2,7 +2,6 @@
 {
     public class Waybill
     {
-
         public Waybill(Employee employee, Bus bus, Ticket ticket, Tour tour)
         {
             Employee = employee;
@@ -19,10 +18,7 @@
 
         internal void SetSaleId(int saleId)
         {
-            
             SaleId = saleId;
-
         }
-
     }
 }

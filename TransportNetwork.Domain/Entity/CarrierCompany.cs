@@ -4,14 +4,14 @@ namespace TransportNetwork.Domain.Entity
 {
     public class CarrierCompany
     {
-        private List<Employee> Employees { get; }
-        private List<Bus> Busses { get; }
-
         public CarrierCompany()
         {
             Employees = Employees ?? new List<Employee>();
             Busses = Busses ?? new List<Bus>();
         }
+
+        private List<Employee> Employees { get; }
+        private List<Bus> Busses { get; }
 
         public void AddNewEmployee(Employee newEmployee)
         {

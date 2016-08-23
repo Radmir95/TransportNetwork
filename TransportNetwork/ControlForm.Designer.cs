@@ -1,13 +1,22 @@
-﻿
+﻿using System;
+using System.ComponentModel;
+using System.Drawing;
+using System.Windows.Forms;
+using TransportNetwork.WebFormsApplication.Properties;
+
 namespace TransportNetwork.WebFormsApplication
 {
     partial class ControlForm
     {
+        private Button btnBusses;
+        private Button btnEmployees;
+        private Button btnMakeSale;
+        private Button btnTours;
+        private Button btnWaybills;
 
 
-        private System.ComponentModel.IContainer components = null;
-        private System.Windows.Forms.Label labelNameOfSystem;
-
+        private readonly IContainer components = null;
+        private Label labelNameOfSystem;
 
         protected override void Dispose(bool disposing)
         {
@@ -19,68 +28,67 @@ namespace TransportNetwork.WebFormsApplication
         }
 
 
-
         private void InitializeComponent()
         {
-
-            labelNameOfSystem = new System.Windows.Forms.Label();
-            btnEmployees = new System.Windows.Forms.Button();
-            btnBusses = new System.Windows.Forms.Button();
-            btnWaybills = new System.Windows.Forms.Button();
-            btnTours = new System.Windows.Forms.Button();
-            btnMakeSale = new System.Windows.Forms.Button();
+            labelNameOfSystem = new Label();
+            btnEmployees = new Button();
+            btnBusses = new Button();
+            btnWaybills = new Button();
+            btnTours = new Button();
+            btnMakeSale = new Button();
             SuspendLayout();
-            
+
             labelNameOfSystem.AutoSize = true;
-            labelNameOfSystem.Location = new System.Drawing.Point(277, 33);
+            labelNameOfSystem.Location = new Point(277, 33);
             labelNameOfSystem.Name = "labelNameOfSystem";
-            labelNameOfSystem.Size = new System.Drawing.Size(57, 13);
+            labelNameOfSystem.Size = new Size(57, 13);
             labelNameOfSystem.TabIndex = 0;
-            labelNameOfSystem.Text = "Название";
-            
-            btnEmployees.Location = new System.Drawing.Point(34, 56);
+            labelNameOfSystem.Text = Resources.ControlForm_InitializeComponent_Название;
+
+            btnEmployees.Location = new Point(34, 56);
             btnEmployees.Name = "btnEmployees";
-            btnEmployees.Size = new System.Drawing.Size(104, 23);
+            btnEmployees.Size = new Size(104, 23);
             btnEmployees.TabIndex = 1;
-            btnEmployees.Text = "сотрудники";
+            btnEmployees.Text = Resources.ControlForm_InitializeComponent_сотрудники;
             btnEmployees.UseVisualStyleBackColor = true;
-            btnEmployees.Click += button1_Click;
-            
-            btnBusses.Location = new System.Drawing.Point(34, 101);
+            btnEmployees.Click += BtnEmployees_Click;
+            ;
+
+            btnBusses.Location = new Point(34, 101);
             btnBusses.Name = "btnBusses";
-            btnBusses.Size = new System.Drawing.Size(104, 23);
+            btnBusses.Size = new Size(104, 23);
             btnBusses.TabIndex = 2;
-            btnBusses.Text = "автобусы";
+            btnBusses.Text = Resources.ControlForm_InitializeComponent_автобусы;
             btnBusses.UseVisualStyleBackColor = true;
-            btnBusses.Click += button2_Click;
-            
-            btnWaybills.Location = new System.Drawing.Point(34, 151);
+            btnBusses.Click += BtnBusses_Click;
+
+            btnWaybills.Location = new Point(34, 151);
             btnWaybills.Name = "btnWaybills";
-            btnWaybills.Size = new System.Drawing.Size(104, 23);
+            btnWaybills.Size = new Size(104, 23);
             btnWaybills.TabIndex = 3;
-            btnWaybills.Text = "путевые листы";
+            btnWaybills.Text = Resources.ControlForm_InitializeComponent_путевые_листы;
             btnWaybills.UseVisualStyleBackColor = true;
-            btnWaybills.Click += button3_Click;
-            
-            btnTours.Location = new System.Drawing.Point(34, 201);
+            btnWaybills.Click += BtnWaybills_Click;
+
+            btnTours.Location = new Point(34, 201);
             btnTours.Name = "btnTours";
-            btnTours.Size = new System.Drawing.Size(104, 23);
+            btnTours.Size = new Size(104, 23);
             btnTours.TabIndex = 4;
-            btnTours.Text = "рейсы";
+            btnTours.Text = Resources.ControlForm_InitializeComponent_рейсы;
             btnTours.UseVisualStyleBackColor = true;
-            btnTours.Click += button4_Click;
-            
-            btnMakeSale.Location = new System.Drawing.Point(34, 244);
+            btnTours.Click += BtnTours_Click;
+
+            btnMakeSale.Location = new Point(34, 244);
             btnMakeSale.Name = "btnMakeSale";
-            btnMakeSale.Size = new System.Drawing.Size(104, 23);
+            btnMakeSale.Size = new Size(104, 23);
             btnMakeSale.TabIndex = 5;
-            btnMakeSale.Text = "продажа билетов";
+            btnMakeSale.Text = Resources.ControlForm_InitializeComponent_продажа_билетов;
             btnMakeSale.UseVisualStyleBackColor = true;
-            btnMakeSale.Click += button5_Click;
-            
-            AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(656, 378);
+            btnMakeSale.Click += BtnMakeSale_Click;
+
+            AutoScaleDimensions = new SizeF(6F, 13F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(656, 378);
             Controls.Add(btnMakeSale);
             Controls.Add(btnTours);
             Controls.Add(btnWaybills);
@@ -88,18 +96,30 @@ namespace TransportNetwork.WebFormsApplication
             Controls.Add(btnEmployees);
             Controls.Add(labelNameOfSystem);
             Name = "ControlForm";
-            Text = "Главная форма";
+            Text = Resources.ControlForm_InitializeComponent_Главная_форма;
             Load += ControlForm_Load;
             ResumeLayout(false);
             PerformLayout();
-
         }
 
-        private System.Windows.Forms.Button btnEmployees;
-        private System.Windows.Forms.Button btnBusses;
-        private System.Windows.Forms.Button btnWaybills;
-        private System.Windows.Forms.Button btnTours;
-        private System.Windows.Forms.Button btnMakeSale;
+        private void BtnMakeSale_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void BtnTours_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void BtnWaybills_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void BtnBusses_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void BtnEmployees_Click(object sender, EventArgs e)
+        {
+        }
     }
 }
-

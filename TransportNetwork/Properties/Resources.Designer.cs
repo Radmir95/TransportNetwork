@@ -61,6 +61,15 @@ namespace TransportNetwork.WebFormsApplication.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to автобусы.
+        /// </summary>
+        internal static string ControlForm_InitializeComponent_автобусы {
+            get {
+                return ResourceManager.GetString("ControlForm_InitializeComponent_автобусы", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Главная форма.
         /// </summary>
         internal static string ControlForm_InitializeComponent_Главная_форма {
@@ -75,6 +84,42 @@ namespace TransportNetwork.WebFormsApplication.Properties {
         internal static string ControlForm_InitializeComponent_Название {
             get {
                 return ResourceManager.GetString("ControlForm_InitializeComponent_Название", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to продажа билетов.
+        /// </summary>
+        internal static string ControlForm_InitializeComponent_продажа_билетов {
+            get {
+                return ResourceManager.GetString("ControlForm_InitializeComponent_продажа_билетов", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to путевые листы.
+        /// </summary>
+        internal static string ControlForm_InitializeComponent_путевые_листы {
+            get {
+                return ResourceManager.GetString("ControlForm_InitializeComponent_путевые_листы", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to рейсы.
+        /// </summary>
+        internal static string ControlForm_InitializeComponent_рейсы {
+            get {
+                return ResourceManager.GetString("ControlForm_InitializeComponent_рейсы", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to сотрудники.
+        /// </summary>
+        internal static string ControlForm_InitializeComponent_сотрудники {
+            get {
+                return ResourceManager.GetString("ControlForm_InitializeComponent_сотрудники", resourceCulture);
             }
         }
     }
