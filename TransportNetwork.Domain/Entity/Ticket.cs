@@ -5,9 +5,9 @@ namespace TransportNetwork.Domain.Entity
     public class Ticket
     {
         public int TicketId { get; set; }
-        public DateTime? DateOfSale { get; private set; }
+        public DateTime? DateOfSale { get; }
         public double Cost { get; private set; }
-        public DateTime? DateOfDeparture { get; private set; }
+        public DateTime? DateOfDeparture { get; }
         public Employee Employee { get; private set; }
 
         public Ticket(DateTime? dateOfSale, double cost, DateTime? dateOfDeparture, Employee employee)
