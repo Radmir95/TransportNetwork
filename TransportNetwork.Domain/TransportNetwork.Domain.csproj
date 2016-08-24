@@ -40,6 +40,7 @@
     <Compile Include="Entity\Ticket.cs" />
     <Compile Include="Entity\Tour.cs" />
     <Compile Include="Entity\Waybill.cs" />
+    <Compile Include="Factory\EmployeeFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
