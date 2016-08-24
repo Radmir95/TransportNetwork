@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace TransportNetwork.Domain.Entity
 {
@@ -22,8 +23,15 @@ namespace TransportNetwork.Domain.Entity
 
         public CarrierCompany(string name, string city, string street, int house)
         {
+
+            if (name == null)
+                throw new ArgumentNullException("Name can't be null");
             Name = name;
+            if (city == null)
+                throw new ArgumentNullException("City can't be null");
             City = city;
+            if (street == null)
+                throw new ArgumentNullException("Street can't be null");
             Street = street;
             House = house;
             Employees = Employees ?? new List<Employee>();
