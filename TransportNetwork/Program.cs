@@ -3,11 +3,11 @@ using System.Windows.Forms;
 
 namespace TransportNetwork.WebFormsApplication
 {
-    static class Program
+    internal static class Program
     {
 
         [STAThread]
-        static void Main()
+        public static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

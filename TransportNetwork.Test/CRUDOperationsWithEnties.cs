@@ -38,5 +38,7 @@ namespace TransportNetwork.Test
             carrierCompany.FireEmployee(fireEmployee);
             Assert.That(carrierCompany.HasEmployee(fireEmployee), Is.False);
         }
+
+
     }
 }
