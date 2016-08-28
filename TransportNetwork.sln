@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25123.0
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransportNetwork.WebFormsApplication", "TransportNetwork\TransportNetwork.WebFormsApplication.csproj", "{A7408D5A-9709-45C7-B3CF-E839585B26B0}"
 EndProject
@@ -10,6 +10,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransportNetwork.Test", "TransportNetwork.Test\TransportNetwork.Test.csproj", "{BE888AF1-5EDB-4A96-9BEC-3B0938A5893B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransportNetwork.DataAccessLayer", "TransportNetwork.DataAccessLayer\TransportNetwork.DataAccessLayer.csproj", "{CDA7AC1F-BB19-4862-AB12-FBB423C51657}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{46A0F784-5A6B-4ECF-8FEA-F189E048066F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{CDA7AC1F-BB19-4862-AB12-FBB423C51657}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CDA7AC1F-BB19-4862-AB12-FBB423C51657}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CDA7AC1F-BB19-4862-AB12-FBB423C51657}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46A0F784-5A6B-4ECF-8FEA-F189E048066F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46A0F784-5A6B-4ECF-8FEA-F189E048066F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46A0F784-5A6B-4ECF-8FEA-F189E048066F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46A0F784-5A6B-4ECF-8FEA-F189E048066F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
