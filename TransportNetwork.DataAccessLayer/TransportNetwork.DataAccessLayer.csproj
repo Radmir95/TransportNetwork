@@ -34,8 +34,6 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IRepository\IBusDriverRepository.cs" />
-    <Compile Include="IRepository\IBusRepository.cs" />
     <Compile Include="IRepository\ICarrierCompanyRepository.cs" />
     <Compile Include="IRepository\ITicketRepository.cs" />
     <Compile Include="IRepository\ITourRepository.cs" />

@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using TransportNetwork.Domain.Entity;
 
 namespace TransportNetwork.DataAccessLayer.IRepository
 {
     public interface ITicketRepository
     {
+
+        void AddTicket(Ticket ticket);
+
     }
 }
