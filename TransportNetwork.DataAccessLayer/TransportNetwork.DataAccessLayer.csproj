@@ -39,7 +39,10 @@
     <Compile Include="IRepository\ITourRepository.cs" />
     <Compile Include="IRepository\IWaybillRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repository\BusDriverRepository.cs" />
+    <Compile Include="Repository\CarrierCompanyRepository.cs" />
+    <Compile Include="Repository\TicketRepository.cs" />
+    <Compile Include="Repository\TourRepository.cs" />
+    <Compile Include="Repository\WaybillRepository.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
