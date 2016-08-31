@@ -6,7 +6,7 @@ namespace TransportNetwork.Domain.Entity
     public class CarrierCompany
     {
 
-        public List<Employee> Employees { get; }
+        public List<Passenger> Passenger { get; }
         public List<Bus> Busses { get; }
         public int CarrierCompanyId { get; private set; }
         public string Name { get; private set; }
@@ -18,7 +18,7 @@ namespace TransportNetwork.Domain.Entity
         public CarrierCompany()
         {
 
-            Employees = Employees ?? new List<Employee>();
+            Passenger = Passenger ?? new List<Passenger>();
             Busses = Busses ?? new List<Bus>();
         }
 
@@ -38,7 +38,7 @@ namespace TransportNetwork.Domain.Entity
                 throw new ArgumentNullException("Telephone can't be null");
             Telephone = telephone;
             House = house;
-            Employees = Employees ?? new List<Employee>();
+            Passenger = Passenger ?? new List<Passenger>();
             Busses = Busses ?? new List<Bus>();
 
         }
@@ -48,19 +48,19 @@ namespace TransportNetwork.Domain.Entity
             CarrierCompanyId = carrierCompanyId;
         }
 
-        public void AddNewEmployee(Employee newEmployee)
+        public void AddNewPassenger(Passenger newPassenger)
         {
-            Employees.Add(newEmployee);
+            Passenger.Add(newPassenger);
         }
 
-        public bool HasEmployee(Employee employee)
+        public bool HasEmployee(Passenger passenger)
         {
-            return Employees.Contains(employee);
+            return Passenger.Contains(passenger);
         }
 
-        public void FireEmployee(Employee fireEmployee)
+        public void DeletePassenger(Passenger passenger)
         {
-            Employees.Remove(fireEmployee);
+            Passenger.Remove(passenger);
         }
 
         public void AddNewBus(Bus bus)

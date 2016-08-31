@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransportNetwork.WebFormsAp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransportNetwork.Domain", "TransportNetwork.Domain\TransportNetwork.Domain.csproj", "{56DFE101-0265-43A1-B9C9-BE03AE686B68}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransportNetwork.Test", "TransportNetwork.Test\TransportNetwork.Test.csproj", "{BE888AF1-5EDB-4A96-9BEC-3B0938A5893B}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransportNetwork.DataAccessLayer", "TransportNetwork.DataAccessLayer\TransportNetwork.DataAccessLayer.csproj", "{CDA7AC1F-BB19-4862-AB12-FBB423C51657}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{46A0F784-5A6B-4ECF-8FEA-F189E048066F}"
@@ -27,10 +25,6 @@ Global
 		{56DFE101-0265-43A1-B9C9-BE03AE686B68}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{56DFE101-0265-43A1-B9C9-BE03AE686B68}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{56DFE101-0265-43A1-B9C9-BE03AE686B68}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BE888AF1-5EDB-4A96-9BEC-3B0938A5893B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BE888AF1-5EDB-4A96-9BEC-3B0938A5893B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BE888AF1-5EDB-4A96-9BEC-3B0938A5893B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BE888AF1-5EDB-4A96-9BEC-3B0938A5893B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CDA7AC1F-BB19-4862-AB12-FBB423C51657}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CDA7AC1F-BB19-4862-AB12-FBB423C51657}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CDA7AC1F-BB19-4862-AB12-FBB423C51657}.Release|Any CPU.ActiveCfg = Release|Any CPU

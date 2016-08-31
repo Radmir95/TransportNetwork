@@ -10,7 +10,7 @@ namespace TransportNetwork.Domain.Entity
         public DateTime? DateOfDeparture { get; }
         public Passenger Passenger { get; private set; }
 
-        public Ticket(DateTime? dateOfSale, double cost, DateTime? dateOfDeparture, Employee employee)
+        public Ticket(DateTime? dateOfSale, double cost, DateTime? dateOfDeparture, Passenger passenger)
         {
             
             if (DateOfSale == null)
@@ -19,9 +19,9 @@ namespace TransportNetwork.Domain.Entity
             if (DateOfDeparture == null)
                 throw new ArgumentNullException("dateOfDeparture can't be null");
             DateOfDeparture = dateOfDeparture;
-            if (employee == null)
-                throw new ArgumentNullException("Employee can't be null");
-            Employee = employee;
+            if (passenger == null)
+                throw new ArgumentNullException("Passenger can't be null");
+            Passenger = passenger;
             Cost = cost;
 
         }
