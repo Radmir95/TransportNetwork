@@ -8,8 +8,9 @@ namespace TransportNetwork.Domain.Entity
         public string Brand { get; private set; }
         public string Model { get; private set; }
         public int NumberOfSeats { get; private set; }
+        public int CarrierCompanyId { get; private set; }
 
-        public Bus(string brand, string model, int numberOfSeats)
+        public Bus(string brand, string model, int numberOfSeats, int carrierCompanyId)
         {
 
             if (brand == null)
@@ -19,7 +20,7 @@ namespace TransportNetwork.Domain.Entity
                 throw new ArgumentNullException("Model can't be null");
             Model = model;
             NumberOfSeats = numberOfSeats;
-
+            CarrierCompanyId = carrierCompanyId;
         }
 
         public Bus()

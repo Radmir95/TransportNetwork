@@ -8,7 +8,7 @@ namespace TransportNetwork.Domain.Entity
         public DateTime? DateOfSale { get; }
         public double Cost { get; private set; }
         public DateTime? DateOfDeparture { get; }
-        public Employee Employee { get; private set; }
+        public Passenger Passenger { get; private set; }
 
         public Ticket(DateTime? dateOfSale, double cost, DateTime? dateOfDeparture, Employee employee)
         {

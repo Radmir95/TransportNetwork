@@ -13,6 +13,7 @@ namespace TransportNetwork.Domain.Entity
         public string City { get; private set; }
         public string Street { get; private set; }
         public int House { get; private set; }
+        public string Telephone { get; set; }
 
         public CarrierCompany()
         {
@@ -21,7 +22,7 @@ namespace TransportNetwork.Domain.Entity
             Busses = Busses ?? new List<Bus>();
         }
 
-        public CarrierCompany(string name, string city, string street, int house)
+        public CarrierCompany(string name, string city, string street, int house, string telephone)
         {
 
             if (name == null)
@@ -33,6 +34,9 @@ namespace TransportNetwork.Domain.Entity
             if (street == null)
                 throw new ArgumentNullException("Street can't be null");
             Street = street;
+            if (telephone == null)
+                throw new ArgumentNullException("Telephone can't be null");
+            Telephone = telephone;
             House = house;
             Employees = Employees ?? new List<Employee>();
             Busses = Busses ?? new List<Bus>();
