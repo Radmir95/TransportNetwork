@@ -35,10 +35,18 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BusDriversForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BusDriversForm.Designer.cs">
+      <DependentUpon>BusDriversForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ControlForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -47,6 +55,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="BusDriversForm.resx">
+      <DependentUpon>BusDriversForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ControlForm.resx">
       <DependentUpon>ControlForm.cs</DependentUpon>
     </EmbeddedResource>
