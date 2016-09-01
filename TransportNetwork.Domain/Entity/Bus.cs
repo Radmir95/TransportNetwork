@@ -9,8 +9,9 @@ namespace TransportNetwork.Domain.Entity
         public string Model { get; private set; }
         public int NumberOfSeats { get; private set; }
         public int CarrierCompanyId { get; private set; }
+        public int BusDriverId { get; private set; }
 
-        public Bus(string brand, string model, int numberOfSeats, int carrierCompanyId)
+        public Bus(string brand, string model, int numberOfSeats, int carrierCompanyId, int busDriverId)
         {
 
             if (brand == null)
@@ -21,6 +22,8 @@ namespace TransportNetwork.Domain.Entity
             Model = model;
             NumberOfSeats = numberOfSeats;
             CarrierCompanyId = carrierCompanyId;
+            BusDriverId = busDriverId;
+
         }
 
         public Bus()
