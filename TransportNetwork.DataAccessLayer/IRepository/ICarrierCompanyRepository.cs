@@ -20,6 +20,7 @@ namespace TransportNetwork.DataAccessLayer.IRepository
         void AddBusDriver(BusDriver busDriver);
         void DeleteBusDriver(BusDriver busDriver);
         void UpdateBusDriver(BusDriver busDriver);
+        List<BusDriver> GetAllBusDrivers();
         
     }
 }

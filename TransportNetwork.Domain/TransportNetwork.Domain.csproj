@@ -42,6 +42,7 @@
     <Compile Include="Entity\Tour.cs" />
     <Compile Include="Entity\Waybill.cs" />
     <Compile Include="Factory\BusFactory.cs" />
+    <Compile Include="Factory\CarrierCompanyFactory.cs" />
     <Compile Include="Factory\TicketFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -78,7 +78,7 @@ namespace TransportNetwork.DataAccessLayer.Repository
 
             var cmdAddBusDriver = new SqlCommand("INSERT INTO BusDriver" +
             "(firstName, surName, middleName, experience, city, street, house, room, telephone, passport, busId)"
-            +" VALUES (@firstName, @surName, @middleName, @experience, @city, @street, @house, @room, @telephone, @passport, @busId)", conn);
+            + " VALUES (@firstName, @surName, @middleName, @experience, @city, @street, @house, @room, @telephone, @passport, @busId)", conn);
 
             var param = new SqlParameter();
 
@@ -220,7 +220,7 @@ namespace TransportNetwork.DataAccessLayer.Repository
 
         public void DeleteBus(Bus bus)
         {
-           
+
 
 
 
@@ -228,7 +228,7 @@ namespace TransportNetwork.DataAccessLayer.Repository
 
         public void DeleteBusDriver(BusDriver busDriver)
         {
-            
+
 
 
 
@@ -236,7 +236,7 @@ namespace TransportNetwork.DataAccessLayer.Repository
 
         public void DeleteCarrierCompany(CarrierCompany carrierCompany)
         {
-           
+
 
 
 
@@ -280,21 +280,49 @@ namespace TransportNetwork.DataAccessLayer.Repository
         public List<CarrierCompany> GetAllCarrierCompanies()
         {
 
-            
+            var context = _context.Create();
+            var conn = (SqlConnection)context;
+
+            var cmdGetCarrierCompanies = new SqlCommand("SELECT carrierCompanyId, name, city, street, house, telephone FROM CarrierCompany", conn);
+
+            var carrierCompanies = new List<CarrierCompany>();
+
+            try
+            {
+                using (var dr = cmdGetCarrierCompanies.ExecuteReader())
+                {
+                    while (dr.Read())
+                    {
+                        var carrierCompanyFactory = new CarrierCompanyFactory();
+                        var carrierCompany = carrierCompanyFactory.Create((int)dr["carrierCompanyId"], (string)dr["name"], (string)dr["city"], (string)dr["street"], (int)dr["house"], (string)dr["telephone"]);
+                        carrierCompanies.Add(carrierCompany);
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                _log.AddExceptionError(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return carrierCompanies;
 
         }
 
         public void UpdateBus(Bus bus)
         {
-         
-            
-            
-               
+
+
+
+
         }
 
         public void UpdateBusDriver(BusDriver busDriver)
         {
-           
+
 
 
 
@@ -302,7 +330,7 @@ namespace TransportNetwork.DataAccessLayer.Repository
 
         public void UpdateCarrierCompany(CarrierCompany carrierCompany)
         {
-           
+
 
 
 
