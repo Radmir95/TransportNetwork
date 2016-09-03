@@ -15,9 +15,8 @@ namespace TransportNetwork.Domain.Entity
         public int Room { get; private set; }
         public string Telephone { get; private set; }
         public string Passport { get; private set; }
-        public int BusId { get; private set; }
 
-        public BusDriver(string firstName, string surName, string middleName, int experience, string city, string street, int house, int room, string telephone, string passport, int busId)
+        public BusDriver(string firstName, string surName, string middleName, int experience, string city, string street, int house, int room, string telephone, string passport)
         {
             FirstName = firstName;
             SurName = surName;
@@ -29,7 +28,6 @@ namespace TransportNetwork.Domain.Entity
             Room = room;
             Telephone = telephone;
             Passport = passport;
-            BusId = busId;
 
         }
 

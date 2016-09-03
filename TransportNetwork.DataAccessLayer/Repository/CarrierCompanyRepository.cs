@@ -77,8 +77,8 @@ namespace TransportNetwork.DataAccessLayer.Repository
             var conn = (SqlConnection)context;
 
             var cmdAddBusDriver = new SqlCommand("INSERT INTO BusDriver" +
-            "(firstName, surName, middleName, experience, city, street, house, room, telephone, passport, busId)"
-            + " VALUES (@firstName, @surName, @middleName, @experience, @city, @street, @house, @room, @telephone, @passport, @busId)", conn);
+            "(firstName, surName, middleName, experience, city, street, house, room, telephone, passport)"
+            + " VALUES (@firstName, @surName, @middleName, @experience, @city, @street, @house, @room, @telephone, @passport)", conn);
 
             var param = new SqlParameter();
 
@@ -139,12 +139,6 @@ namespace TransportNetwork.DataAccessLayer.Repository
             param.ParameterName = "@passport";
             param.Value = busDriver.Passport;
             param.SqlDbType = SqlDbType.NVarChar;
-            cmdAddBusDriver.Parameters.Add(param);
-
-            param = new SqlParameter();
-            param.ParameterName = "@busId";
-            param.Value = busDriver.BusId;
-            param.SqlDbType = SqlDbType.Int;
             cmdAddBusDriver.Parameters.Add(param);
 
             try
@@ -238,6 +232,42 @@ namespace TransportNetwork.DataAccessLayer.Repository
         {
 
 
+
+
+        }
+
+        public List<BusDriver> GetAllBusDrivers()
+        {
+
+            var context = _context.Create();
+            var conn = (SqlConnection)context;
+
+            var cmdGetAllBusDrivers = new SqlCommand("SELECT busDriverId, firstName, surName, middleName, experience, city, street, house, room, telephone, passport, busId FROM BusDriver", conn);
+
+            var busDrivers = new List<BusDriver>();
+
+            try
+            {
+                using (var dr = cmdGetAllBusDrivers.ExecuteReader())
+                {
+                    while (dr.Read())
+                    {
+                        var busDriverFactory = new BusDriverFactory();
+                        var busDriver = busDriverFactory.Create((int)dr["busDriverId"], (string)dr["firstName"], (string)dr["surName"], (string)dr["middleName"], (int)dr["experiece"], (string)dr["city"], (string)dr["street"], (int)dr["house"], (int)dr["room"], (string)dr["telephone"], (string)dr["passport"], (int)dr["busId"]);
+                        busDrivers.Add(busDriver);
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                _log.AddExceptionError(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return busDrivers;
 
 
         }
