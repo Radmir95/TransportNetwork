@@ -1,6 +1,4 @@
-﻿using Infrastructure.ILoggerManager;
-using System;
-using System.Data;
+﻿using System.Data;
 using System.Data.SqlClient;
 using TransportNetwork.DataAccessLayer.IRepository;
 using TransportNetwork.Domain.Entity;
@@ -13,7 +11,6 @@ namespace TransportNetwork.DataAccessLayer.Repository
     {
 
         private readonly ConnectionContext _context;
-        private readonly ILogger _log;
 
         public void AddBus(Bus bus)
         {
@@ -61,7 +58,7 @@ namespace TransportNetwork.DataAccessLayer.Repository
             }
             catch (SqlException ex)
             {
-                _log.AddExceptionError(ex.Message);
+                
             }
             finally
             {
@@ -147,7 +144,7 @@ namespace TransportNetwork.DataAccessLayer.Repository
             }
             catch (SqlException ex)
             {
-                _log.AddExceptionError(ex.Message);
+                
             }
             finally
             {
@@ -202,7 +199,7 @@ namespace TransportNetwork.DataAccessLayer.Repository
             }
             catch (SqlException ex)
             {
-                _log.AddExceptionError(ex.Message);
+                
             }
             finally
             {
@@ -260,7 +257,7 @@ namespace TransportNetwork.DataAccessLayer.Repository
             }
             catch (SqlException ex)
             {
-                _log.AddExceptionError(ex.Message);
+                
             }
             finally
             {
@@ -296,7 +293,7 @@ namespace TransportNetwork.DataAccessLayer.Repository
             }
             catch (SqlException ex)
             {
-                _log.AddExceptionError(ex.Message);
+               
             }
             finally
             {
@@ -331,7 +328,7 @@ namespace TransportNetwork.DataAccessLayer.Repository
             }
             catch (SqlException ex)
             {
-                _log.AddExceptionError(ex.Message);
+                
             }
             finally
             {

@@ -1,5 +1,4 @@
-﻿using Infrastructure.ILoggerManager;
-using System.Data;
+﻿using System.Data;
 using System.Data.SqlClient;
 using TransportNetwork.DataAccessLayer.IRepository;
 using TransportNetwork.Domain.Entity;
@@ -10,7 +9,6 @@ namespace TransportNetwork.DataAccessLayer.Repository
     {
 
         private readonly ConnectionContext _context;
-        private readonly ILogger _log;
 
         public void AddTour(Tour tour)
         {
@@ -53,7 +51,7 @@ namespace TransportNetwork.DataAccessLayer.Repository
             }
             catch (SqlException ex)
             {
-                _log.AddExceptionError(ex.Message);
+               
             }
             finally
             {

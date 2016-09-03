@@ -49,10 +49,6 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <ProjectReference Include="..\Infrastructure\Infrastructure.csproj">
-      <Project>{46a0f784-5a6b-4ecf-8fea-f189e048066f}</Project>
-      <Name>Infrastructure</Name>
-    </ProjectReference>
     <ProjectReference Include="..\TransportNetwork.Domain\TransportNetwork.Domain.csproj">
       <Project>{56DFE101-0265-43A1-B9C9-BE03AE686B68}</Project>
       <Name>TransportNetwork.Domain</Name>

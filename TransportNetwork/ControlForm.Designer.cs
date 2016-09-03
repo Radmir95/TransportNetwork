@@ -55,7 +55,7 @@ namespace TransportNetwork.WebFormsApplication
             this.btnBusDrivers.TabIndex = 1;
             this.btnBusDrivers.Text = "Водители";
             this.btnBusDrivers.UseVisualStyleBackColor = true;
-            this.btnBusDrivers.Click += new System.EventHandler(this.btnEmployees_Click);
+            this.btnBusDrivers.Click += new System.EventHandler(this.btnBusDrivers_Click);
             // 
             // btnBusses
             // 
