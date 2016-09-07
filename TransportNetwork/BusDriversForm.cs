@@ -7,6 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
+using TransportNetwork.DataAccessLayer.IRepository;
+using TransportNetwork.DataAccessLayer.Repository;
+using TransportNetwork.Domain.Entity;
 
 namespace TransportNetwork.WebFormsApplication
 {
@@ -21,13 +25,21 @@ namespace TransportNetwork.WebFormsApplication
         private void BusDriversForm_Load(object sender, EventArgs e)
         {
 
+            ICarrierCompanyRepository carrierCompany = new CarrierCompanyRepository();
+            var busDrivers = carrierCompany.GetAllBusDrivers();
+            foreach (var busDriver in busDrivers)
+            {
+
+                comboBox1.Items.Add(busDriver.BusDriverId);
+            }
             
 
         }
 
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
         }
     }
 }

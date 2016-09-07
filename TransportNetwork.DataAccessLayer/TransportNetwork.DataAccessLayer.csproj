@@ -29,6 +29,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
@@ -46,8 +49,13 @@
     <Compile Include="Repository\TicketRepository.cs" />
     <Compile Include="Repository\TourRepository.cs" />
     <Compile Include="Repository\WaybillRepository.cs" />
+    <Compile Include="Test.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Web.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TransportNetwork.Domain\TransportNetwork.Domain.csproj">
       <Project>{56DFE101-0265-43A1-B9C9-BE03AE686B68}</Project>

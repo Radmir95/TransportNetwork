@@ -8,7 +8,7 @@ namespace TransportNetwork.DataAccessLayer.IRepository
 
         void AddBus(Bus bus);
         void DeleteBus(Bus bus);
-        List<Bus> GetAllBusses(Bus bus);
+        List<Bus> GetAllBusses();
         void UpdateBus(Bus bus);
 
         void AddNewCarrierCompany(CarrierCompany carrierCompany);

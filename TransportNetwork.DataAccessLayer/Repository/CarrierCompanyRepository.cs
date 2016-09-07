@@ -1,4 +1,5 @@
-﻿using System.Data;
+﻿using System;
+using System.Data;
 using System.Data.SqlClient;
 using TransportNetwork.DataAccessLayer.IRepository;
 using TransportNetwork.Domain.Entity;
@@ -11,6 +12,13 @@ namespace TransportNetwork.DataAccessLayer.Repository
     {
 
         private readonly ConnectionContext _context;
+
+        public CarrierCompanyRepository()
+        {
+
+            _context = new ConnectionContext("SqlConn");
+
+        }
 
         public void AddBus(Bus bus)
         {
@@ -56,7 +64,7 @@ namespace TransportNetwork.DataAccessLayer.Repository
             {
                 cmdAddBus.ExecuteNonQuery();
             }
-            catch (SqlException ex)
+            catch (SqlException)
             {
                 
             }
@@ -142,7 +150,7 @@ namespace TransportNetwork.DataAccessLayer.Repository
             {
                 cmdAddBusDriver.ExecuteNonQuery();
             }
-            catch (SqlException ex)
+            catch (SqlException)
             {
                 
             }
@@ -197,7 +205,7 @@ namespace TransportNetwork.DataAccessLayer.Repository
             {
                 cmdAddCarrierCompany.ExecuteNonQuery();
             }
-            catch (SqlException ex)
+            catch (SqlException)
             {
                 
             }
@@ -239,7 +247,7 @@ namespace TransportNetwork.DataAccessLayer.Repository
             var context = _context.Create();
             var conn = (SqlConnection)context;
 
-            var cmdGetAllBusDrivers = new SqlCommand("SELECT busDriverId, firstName, surName, middleName, experience, city, street, house, room, telephone, passport, busId FROM BusDriver", conn);
+            var cmdGetAllBusDrivers = new SqlCommand("SELECT busDriverId, firstName, surName, middleName, experience, city, street, house, room, telephone, passport, carrierCompanyId FROM BusDriver", conn);
 
             var busDrivers = new List<BusDriver>();
 
@@ -250,14 +258,14 @@ namespace TransportNetwork.DataAccessLayer.Repository
                     while (dr.Read())
                     {
                         var busDriverFactory = new BusDriverFactory();
-                        var busDriver = busDriverFactory.Create((int)dr["busDriverId"], (string)dr["firstName"], (string)dr["surName"], (string)dr["middleName"], (int)dr["experiece"], (string)dr["city"], (string)dr["street"], (int)dr["house"], (int)dr["room"], (string)dr["telephone"], (string)dr["passport"], (int)dr["busId"]);
+                        var busDriver = busDriverFactory.Create((int)dr["busDriverId"], (string)dr["firstName"], (string)dr["surName"], (string)dr["middleName"], (int)dr["experience"], (string)dr["city"], (string)dr["street"], (int)dr["house"], (int)dr["room"], (string)dr["telephone"], (string)dr["passport"], (int)dr["carrierCompanyId"]);
                         busDrivers.Add(busDriver);
                     }
                 }
             }
             catch (SqlException ex)
             {
-                
+                Console.WriteLine(ex);
             }
             finally
             {
@@ -269,7 +277,7 @@ namespace TransportNetwork.DataAccessLayer.Repository
 
         }
 
-        public List<Bus> GetAllBusses(Bus bus)
+        public List<Bus> GetAllBusses()
         {
 
             var context = _context.Create();
@@ -286,12 +294,12 @@ namespace TransportNetwork.DataAccessLayer.Repository
                     while (dr.Read())
                     {
                         var busFactory = new BusFactory();
-                        var _bus = busFactory.Create((string)dr["numberPlate"], (string)dr["brand"], (string)dr["model"], (int)dr["numberOfSeats"], (int)dr["carrierCompanyId"], (int)dr["busDriverId"]);
-                        busses.Add(_bus);
+                        var bus = busFactory.Create((string)dr["numberPlate"], (string)dr["brand"], (string)dr["model"], (int)dr["numberOfSeats"], (int)dr["carrierCompanyId"], (int)dr["busDriverId"]);
+                        busses.Add(bus);
                     }
                 }
             }
-            catch (SqlException ex)
+            catch (SqlException)
             {
                
             }
@@ -326,7 +334,7 @@ namespace TransportNetwork.DataAccessLayer.Repository
                     }
                 }
             }
-            catch (SqlException ex)
+            catch (SqlException)
             {
                 
             }

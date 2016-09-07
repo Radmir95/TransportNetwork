@@ -13,15 +13,12 @@ namespace TransportNetwork.DataAccessLayer
 
         public ConnectionContext(string connectionName)
         {
-            if (connectionName == null) throw new ArgumentNullException("connectionName");
+ 
 
-            var conStr = ConfigurationManager.ConnectionStrings[connectionName];
-            if (conStr == null)
-                throw new ConfigurationErrorsException(string.Format("Failed to find connection string named '{0}' in app/web.config.", connectionName));
-
-            _name = conStr.ProviderName;
-            _provider = DbProviderFactories.GetFactory(conStr.ProviderName);
-            _connectionString = conStr.ConnectionString;
+           
+            _name = "System.Data.SqlClient";
+            _provider = DbProviderFactories.GetFactory("System.Data.SqlClient");
+            _connectionString = @"Data Source=(local)\SQLEXPRESS; Initial Catalog=TransportNetwork; Integrated Security=True";
         }
 
         public IDbConnection Create()

@@ -80,9 +80,22 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TransportNetwork.DataAccessLayer\TransportNetwork.DataAccessLayer.csproj">
+      <Project>{cda7ac1f-bb19-4862-ab12-fbb423c51657}</Project>
+      <Name>TransportNetwork.DataAccessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TransportNetwork.Domain\TransportNetwork.Domain.csproj">
+      <Project>{56dfe101-0265-43a1-b9c9-be03ae686b68}</Project>
+      <Name>TransportNetwork.Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
