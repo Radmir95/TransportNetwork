@@ -82,8 +82,8 @@ namespace TransportNetwork.DataAccessLayer.Repository
             var conn = (SqlConnection)context;
 
             var cmdAddBusDriver = new SqlCommand("INSERT INTO BusDriver" +
-            "(firstName, surName, middleName, experience, city, street, house, room, telephone, passport)"
-            + " VALUES (@firstName, @surName, @middleName, @experience, @city, @street, @house, @room, @telephone, @passport)", conn);
+            "(firstName, surName, middleName, experience, city, street, house, room, telephone, passport, carrierCompanyId)"
+            + " VALUES (@firstName, @surName, @middleName, @experience, @city, @street, @house, @room, @telephone, @passport, @carrierCompanyId)", conn);
 
             var param = new SqlParameter();
 
@@ -144,6 +144,12 @@ namespace TransportNetwork.DataAccessLayer.Repository
             param.ParameterName = "@passport";
             param.Value = busDriver.Passport;
             param.SqlDbType = SqlDbType.NVarChar;
+            cmdAddBusDriver.Parameters.Add(param);
+
+            param = new SqlParameter();
+            param.ParameterName = "@carrierCompanyId";
+            param.Value = busDriver.Passport;
+            param.SqlDbType = SqlDbType.Int;
             cmdAddBusDriver.Parameters.Add(param);
 
             try
