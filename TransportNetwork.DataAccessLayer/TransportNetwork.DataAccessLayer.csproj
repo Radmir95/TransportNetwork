@@ -40,7 +40,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConnectionContext.cs" />
-    <Compile Include="IRepository\ICarrierCompanyRepository.cs" />
+    <Compile Include="IRepository\IBusRepository.cs" />
+    <Compile Include="IRepository\IEmployeeRepository.cs" />
     <Compile Include="IRepository\ITicketRepository.cs" />
     <Compile Include="IRepository\ITourRepository.cs" />
     <Compile Include="IRepository\IWaybillRepository.cs" />

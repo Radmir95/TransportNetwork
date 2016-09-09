@@ -16,12 +16,12 @@ namespace TransportNetwork.WebFormsApplication
         private void BusDriversForm_Load(object sender, EventArgs e)
         {
 
-            ICarrierCompanyRepository carrierCompany = new CarrierCompanyRepository();
-            var busDrivers = carrierCompany.GetAllBusDrivers();
+            IEmployeeRepository carrierCompany = new CarrierCompanyRepository();
+            var busDrivers = carrierCompany.GetEmployee();
             foreach (var busDriver in busDrivers)
             {
 
-                listOfBusDrivers.Items.Add(busDriver.BusDriverId);
+                listOfBusDrivers.Items.Add(busDriver.EmployeeId);
             }
 
             if (busDrivers.Count <= 0) return;
@@ -49,7 +49,7 @@ namespace TransportNetwork.WebFormsApplication
         private void addButton_Click(object sender, EventArgs e)
         {
 
-            ICarrierCompanyRepository carrierCompany = new CarrierCompanyRepository();
+            IEmployeeRepository carrierCompany = new CarrierCompanyRepository();
 
             var name = nameTb.Text;
             var surname = surnameTb.Text;
@@ -63,8 +63,8 @@ namespace TransportNetwork.WebFormsApplication
             var passport = passportTb.Text;
             var company = Convert.ToInt32(companyTb.Text);
 
-            var busDriver = new BusDriver(name,surname,middlename,experience,city,street,house,room,telephone,passport,company);
-            carrierCompany.AddBusDriver(busDriver);
+            var busDriver = new Employee(name,surname,middlename,experience,city,street,house,room,telephone,passport,company);
+            carrierCompany.AddEmployee(busDriver);
 
         }
 

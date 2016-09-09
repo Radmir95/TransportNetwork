@@ -8,7 +8,7 @@ using TransportNetwork.Domain.Factory;
 
 namespace TransportNetwork.DataAccessLayer.Repository
 {
-    public class CarrierCompanyRepository : ICarrierCompanyRepository
+    public class CarrierCompanyRepository : IEmployeeRepository
     {
 
         private readonly ConnectionContext _context;
@@ -75,7 +75,7 @@ namespace TransportNetwork.DataAccessLayer.Repository
 
         }
 
-        public void AddBusDriver(BusDriver busDriver)
+        public void AddEmployee(Employee busDriver)
         {
 
             var context = _context.Create();
@@ -231,7 +231,7 @@ namespace TransportNetwork.DataAccessLayer.Repository
 
         }
 
-        public void DeleteBusDriver(BusDriver busDriver)
+        public void DeleteEmployee(Employee busDriver)
         {
 
 
@@ -247,7 +247,7 @@ namespace TransportNetwork.DataAccessLayer.Repository
 
         }
 
-        public List<BusDriver> GetAllBusDrivers()
+        public List<Employee> GetEmployee()
         {
 
             var context = _context.Create();
@@ -255,7 +255,7 @@ namespace TransportNetwork.DataAccessLayer.Repository
 
             var cmdGetAllBusDrivers = new SqlCommand("SELECT busDriverId, firstName, surName, middleName, experience, city, street, house, room, telephone, passport, carrierCompanyId FROM BusDriver", conn);
 
-            var busDrivers = new List<BusDriver>();
+            var busDrivers = new List<Employee>();
 
             try
             {
@@ -361,7 +361,7 @@ namespace TransportNetwork.DataAccessLayer.Repository
 
         }
 
-        public void UpdateBusDriver(BusDriver busDriver)
+        public void UpdateEmployee(Employee busDriver)
         {
 
 

@@ -12,7 +12,7 @@ namespace TransportNetwork.DataAccessLayer
         {
 
             CarrierCompanyRepository carrier = new CarrierCompanyRepository();
-            List<BusDriver> driver = carrier.GetAllBusDrivers();
+            List<Employee> driver = carrier.GetEmployee();
             Console.WriteLine(driver[0].City);
 
         }
