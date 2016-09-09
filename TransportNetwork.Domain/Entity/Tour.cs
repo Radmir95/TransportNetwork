@@ -9,8 +9,9 @@ namespace TransportNetwork.Domain.Entity
         public DateTime? TimeOfArrival { get; private set; }
         public int Distance { get; private set; }
         public string PointOfDeparture { get; private set; }
+        public string PointOfArrival { get; private set; }
 
-        public Tour(DateTime? timeOfDeparture, DateTime? timeOfArrival, int distance, string pointOfDeparture)
+        public Tour(DateTime? timeOfDeparture, DateTime? timeOfArrival, int distance, string pointOfDeparture, string pointOfArrival)
         {
             
             if (timeOfDeparture == null)
@@ -20,10 +21,12 @@ namespace TransportNetwork.Domain.Entity
                 throw new ArgumentNullException("Time of arrival can't be null");
             TimeOfArrival = timeOfArrival;
             Distance = distance;
-            if (PointOfDeparture == null)
+            if (pointOfDeparture == null)
                 throw new ArgumentNullException("PointOfDeparture can't be null");
             PointOfDeparture = pointOfDeparture;
-
+            if (pointOfArrival == null)
+                throw new ArgumentNullException("Point of arrival can't be null");
+            PointOfArrival = pointOfArrival;
         }
 
         internal void SetTourId(int tourId)
