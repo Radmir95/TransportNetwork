@@ -135,4 +135,7 @@
   <data name="ControlForm_InitializeComponent_продажа_билетов" xml:space="preserve">
     <value>продажа билетов</value>
   </data>
+  <data name="LoginForm_enterButton_Click_Error_Message" xml:space="preserve">
+    <value>Вы ввели неверные пароль или логин</value>
+  </data>
 </root>

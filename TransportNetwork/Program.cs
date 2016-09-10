@@ -11,7 +11,7 @@ namespace TransportNetwork.WebFormsApplication
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ControlForm());
+            Application.Run(new LoginForm());
         }
     }
 }
