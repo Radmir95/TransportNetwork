@@ -7,18 +7,18 @@ namespace TransportNetwork.Domain.Entity
         public int TicketId { get; set; }
         public DateTime? DateOfSale { get; }
         public double Cost { get; private set; }
-        public DateTime? DateOfDeparture { get; }
+        public Tour Tour { get; private set; }
         public Passenger Passenger { get; private set; }
 
-        public Ticket(DateTime? dateOfSale, double cost, DateTime? dateOfDeparture, Passenger passenger)
+        public Ticket(DateTime? dateOfSale, double cost, Tour tour, Passenger passenger)
         {
             
-            if (DateOfSale == null)
+            if (dateOfSale == null)
                 throw new ArgumentNullException("DateOfSale can't be null");
             DateOfSale = dateOfSale;
-            if (DateOfDeparture == null)
-                throw new ArgumentNullException("dateOfDeparture can't be null");
-            DateOfDeparture = dateOfDeparture;
+            if (tour == null)
+                throw new ArgumentNullException("Tour can't be null");
+            Tour = tour;
             if (passenger == null)
                 throw new ArgumentNullException("Passenger can't be null");
             Passenger = passenger;

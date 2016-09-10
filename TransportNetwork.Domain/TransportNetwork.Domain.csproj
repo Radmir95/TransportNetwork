@@ -40,7 +40,7 @@
     <Compile Include="Entity\Ticket.cs" />
     <Compile Include="Entity\Tour.cs" />
     <Compile Include="Entity\Waybill.cs" />
-    <Compile Include="Factory\BusDriverFactory.cs" />
+    <Compile Include="Factory\EmployeeFactory.cs" />
     <Compile Include="Factory\BusFactory.cs" />
     <Compile Include="Factory\CarrierCompanyFactory.cs" />
     <Compile Include="Factory\TicketFactory.cs" />

@@ -263,7 +263,7 @@ namespace TransportNetwork.DataAccessLayer.Repository
                 {
                     while (dr.Read())
                     {
-                        var busDriverFactory = new BusDriverFactory();
+                        var busDriverFactory = new EmployeeFactory();
                         var busDriver = busDriverFactory.Create((int)dr["busDriverId"], (string)dr["firstName"], (string)dr["surName"], (string)dr["middleName"], (int)dr["experience"], (string)dr["city"], (string)dr["street"], (int)dr["house"], (int)dr["room"], (string)dr["telephone"], (string)dr["passport"], (int)dr["carrierCompanyId"]);
                         busDrivers.Add(busDriver);
                     }

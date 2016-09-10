@@ -1,5 +1,4 @@
-﻿using System;
-using System.Configuration;
+﻿using System.Configuration;
 using System.Data;
 using System.Data.Common;
 
@@ -11,10 +10,8 @@ namespace TransportNetwork.DataAccessLayer
         private readonly string _connectionString;
         private readonly string _name;
 
-        public ConnectionContext(string connectionName)
+        public ConnectionContext()
         {
- 
-
            
             _name = "System.Data.SqlClient";
             _provider = DbProviderFactories.GetFactory("System.Data.SqlClient");
@@ -25,7 +22,8 @@ namespace TransportNetwork.DataAccessLayer
         {
             var connection = _provider.CreateConnection();
             if (connection == null)
-                throw new ConfigurationErrorsException(string.Format("Failed to create a connection using the connection string named '{0}' in app/web.config.", _name));
+                throw new ConfigurationErrorsException(
+                    $"Failed to create a connection using the connection string named '{_name}' in app/web.config.");
 
             connection.ConnectionString = _connectionString;
             connection.Open();
