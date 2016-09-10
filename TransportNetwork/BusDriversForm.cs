@@ -16,7 +16,7 @@ namespace TransportNetwork.WebFormsApplication
         private void BusDriversForm_Load(object sender, EventArgs e)
         {
 
-            IEmployeeRepository carrierCompany = new CarrierCompanyRepository();
+            IEmployeeRepository carrierCompany = new EmployeeRepository();
             var busDrivers = carrierCompany.GetEmployee();
             foreach (var busDriver in busDrivers)
             {
@@ -49,7 +49,7 @@ namespace TransportNetwork.WebFormsApplication
         private void addButton_Click(object sender, EventArgs e)
         {
 
-            IEmployeeRepository carrierCompany = new CarrierCompanyRepository();
+            IEmployeeRepository carrierCompany = new EmployeeRepository();
 
             var name = nameTb.Text;
             var surname = surnameTb.Text;

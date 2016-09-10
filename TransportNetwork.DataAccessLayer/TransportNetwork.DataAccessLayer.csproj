@@ -44,11 +44,13 @@
     <Compile Include="IRepository\IEmployeeRepository.cs" />
     <Compile Include="IRepository\ITicketRepository.cs" />
     <Compile Include="IRepository\ITourRepository.cs" />
+    <Compile Include="IRepository\IUserPermissionRepository.cs" />
     <Compile Include="IRepository\IWaybillRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repository\CarrierCompanyRepository.cs" />
+    <Compile Include="Repository\EmployeeRepository.cs" />
     <Compile Include="Repository\TicketRepository.cs" />
     <Compile Include="Repository\TourRepository.cs" />
+    <Compile Include="Repository\UserPermissionRepository.cs" />
     <Compile Include="Repository\WaybillRepository.cs" />
     <Compile Include="Test.cs" />
   </ItemGroup>
