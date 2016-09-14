@@ -35,8 +35,8 @@ namespace TransportNetwork.WebFormsApplication
                         break;
 
                     case "Hr":
-                        var hrForm = new HrForm();
-                        hrForm.Show();
+                        var employeeForm = new EmployeeForm();
+                        employeeForm.Show();
                         break;
                 }
             }

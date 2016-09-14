@@ -37,7 +37,7 @@ namespace TransportNetwork.WebFormsApplication
         private void btnBusDrivers_Click(object sender, EventArgs e)
         {
 
-            var busDriversForm = new BusDriversForm();
+            var busDriversForm = new EmployeeForm();
             busDriversForm.Show();
 
         }

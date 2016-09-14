@@ -22,7 +22,7 @@ namespace TransportNetwork.DataAccessLayer.Repository
             var context = _context.Create();
             var conn = (SqlConnection)context;
 
-            var cmdGetUser = new SqlCommand("SELECT userPermission FROM UserPermission WHERE login = @login AND password=@password", conn);
+            var cmdGetUser = new SqlCommand("SELECT permissionType FROM UserPermission WHERE login = @login AND password=@password", conn);
 
             var param = new SqlParameter();
 
@@ -45,7 +45,7 @@ namespace TransportNetwork.DataAccessLayer.Repository
                 {
                     while (dr.Read())
                     {
-                        permission = (string) dr["userPermission"];
+                        permission = (string) dr["permissionType"];
                     }
                 }
             }
