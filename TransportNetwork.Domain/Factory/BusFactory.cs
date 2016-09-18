@@ -5,9 +5,9 @@ namespace TransportNetwork.Domain.Factory
     public class BusFactory
     {
 
-        public Bus Create(string numberPlate, string brand, string model, int numberOfSeats, int carrierCompanyId, int busDriverId)
+        public Bus Create(string numberPlate, string brand, string model, int numberOfSeats, int employeeId)
         {
-            Bus bus = new Bus(brand, model, numberOfSeats, carrierCompanyId, busDriverId);
+            var bus = new Bus(brand, model, numberOfSeats, employeeId);
             bus.SetNumberPlate(numberPlate);
             return bus;
         }

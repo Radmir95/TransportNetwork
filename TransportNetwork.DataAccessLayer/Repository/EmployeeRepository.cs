@@ -10,27 +10,24 @@ namespace TransportNetwork.DataAccessLayer.Repository
 {
     public class EmployeeRepository : IEmployeeRepository
     {
-
         private readonly ConnectionContext _context;
 
         public EmployeeRepository()
         {
-
             _context = new ConnectionContext();
-
         }
 
-      
 
         public void AddEmployee(Employee busDriver)
         {
-
             var context = _context.Create();
-            var conn = (SqlConnection)context;
+            var conn = (SqlConnection) context;
 
             var cmdAddEmployee = new SqlCommand("INSERT INTO Employee" +
-            "(firstName, surName, middleName, experience, role, city, street, house, room, telephone, passport)"
-            + " VALUES (@firstName, @surName, @middleName, @experience, @role, @city, @street, @house, @room, @telephone, @passport)", conn);
+                                                "(firstName, surName, middleName, experience, role, city, street, house, room, telephone, passport)"
+                                                +
+                                                " VALUES (@firstName, @surName, @middleName, @experience, @role, @city, @street, @house, @room, @telephone, @passport)",
+                conn);
 
             var param = new SqlParameter();
 
@@ -105,33 +102,51 @@ namespace TransportNetwork.DataAccessLayer.Repository
             }
             catch (SqlException)
             {
-                
             }
             finally
             {
                 conn.Close();
             }
-
         }
 
 
-      
-
-        public void DeleteEmployee(Employee busDriver)
+        public void DeleteEmployee(Employee employee)
         {
+            var context = _context.Create();
+            var conn = (SqlConnection) context;
+
+            var cmdDeleteEmployee = new SqlCommand("DELETE FROM Employee WHERE employeeId = @employeeId", conn);
 
 
+            var param = new SqlParameter();
 
+            param.ParameterName = "@employeeId";
+            param.Value = employee.EmployeeId;
+            param.SqlDbType = SqlDbType.Int;
+            cmdDeleteEmployee.Parameters.Add(param);
 
+            try
+            {
+                cmdDeleteEmployee.ExecuteNonQuery();
+            }
+            catch (SqlException)
+            {
+            }
+            finally
+            {
+                conn.Close();
+            }
         }
 
         public List<Employee> GetEmployee()
         {
-
             var context = _context.Create();
-            var conn = (SqlConnection)context;
+            var conn = (SqlConnection) context;
 
-            var cmdGetAllEmployee = new SqlCommand("SELECT employeeId, firstName, surName, middleName, experience, role, city, street, house, room, telephone, passport FROM Employee", conn);
+            var cmdGetAllEmployee =
+                new SqlCommand(
+                    "SELECT employeeId, firstName, surName, middleName, experience, role, city, street, house, room, telephone, passport FROM Employee",
+                    conn);
 
             var employees = new List<Employee>();
 
@@ -142,7 +157,10 @@ namespace TransportNetwork.DataAccessLayer.Repository
                     while (dr.Read())
                     {
                         var employeeFactory = new EmployeeFactory();
-                        var employee = employeeFactory.Create((int)dr["employeeId"], (string)dr["firstName"], (string)dr["surName"], (string)dr["middleName"], (int)dr["experience"], (string)dr["role"], (string)dr["city"], (string)dr["street"], (int)dr["house"], (int)dr["room"], (string)dr["telephone"], (string)dr["passport"]);
+                        var employee = employeeFactory.Create((int) dr["employeeId"], (string) dr["firstName"],
+                            (string) dr["surName"], (string) dr["middleName"], (int) dr["experience"],
+                            (string) dr["role"], (string) dr["city"], (string) dr["street"], (int) dr["house"],
+                            (int) dr["room"], (string) dr["telephone"], (string) dr["passport"]);
                         employees.Add(employee);
                     }
                 }
@@ -157,21 +175,102 @@ namespace TransportNetwork.DataAccessLayer.Repository
             }
 
             return employees;
-
         }
 
-  
 
-
-       
-
-        public void UpdateEmployee(Employee busDriver)
+        public void UpdateEmployee(Employee employee)
         {
+            var context = _context.Create();
+            var conn = (SqlConnection) context;
 
+            var cmdUpdateUser = new SqlCommand("UPDATE Employee" +
+                                               " SET firstName = @firstName, surName = @surName, middleName = @middleName, experience = @experience, city = @city, street = @street, house = @house, room = @room, telephone = @telephone, passport = @passport, role = @role WHERE employeeId = @employeeId",
+                conn);
 
+            var param = new SqlParameter();
 
+            param.ParameterName = "@employeeId";
+            param.Value = employee.EmployeeId;
+            param.SqlDbType = SqlDbType.Int;
+            cmdUpdateUser.Parameters.Add(param);
 
+            param = new SqlParameter();
+            param.ParameterName = "@firstName";
+            param.Value = employee.FirstName;
+            param.SqlDbType = SqlDbType.Text;
+            cmdUpdateUser.Parameters.Add(param);
+
+            param = new SqlParameter();
+            param.ParameterName = "@surName";
+            param.Value = employee.SurName;
+            param.SqlDbType = SqlDbType.NVarChar;
+            cmdUpdateUser.Parameters.Add(param);
+
+            param = new SqlParameter();
+            param.ParameterName = "@middleName";
+            param.Value = employee.MiddleName;
+            param.SqlDbType = SqlDbType.NVarChar;
+            cmdUpdateUser.Parameters.Add(param);
+
+            param = new SqlParameter();
+            param.ParameterName = "@experience";
+            param.Value = employee.Experience;
+            param.SqlDbType = SqlDbType.Int;
+            cmdUpdateUser.Parameters.Add(param);
+
+            param = new SqlParameter();
+            param.ParameterName = "@role";
+            param.Value = employee.Role;
+            param.SqlDbType = SqlDbType.NVarChar;
+            cmdUpdateUser.Parameters.Add(param);
+
+            param = new SqlParameter();
+            param.ParameterName = "@city";
+            param.Value = employee.City;
+            param.SqlDbType = SqlDbType.NVarChar;
+            cmdUpdateUser.Parameters.Add(param);
+
+            param = new SqlParameter();
+            param.ParameterName = "@street";
+            param.Value = employee.Street;
+            param.SqlDbType = SqlDbType.NVarChar;
+            cmdUpdateUser.Parameters.Add(param);
+
+            param = new SqlParameter();
+            param.ParameterName = "@house";
+            param.Value = employee.House;
+            param.SqlDbType = SqlDbType.Int;
+            cmdUpdateUser.Parameters.Add(param);
+
+            param = new SqlParameter();
+            param.ParameterName = "@room";
+            param.Value = employee.Room;
+            param.SqlDbType = SqlDbType.Int;
+            cmdUpdateUser.Parameters.Add(param);
+
+            param = new SqlParameter();
+            param.ParameterName = "@telephone";
+            param.Value = employee.Telephone;
+            param.SqlDbType = SqlDbType.NVarChar;
+            cmdUpdateUser.Parameters.Add(param);
+
+            param = new SqlParameter();
+            param.ParameterName = "@passport";
+            param.Value = employee.Passport;
+            param.SqlDbType = SqlDbType.NVarChar;
+            cmdUpdateUser.Parameters.Add(param);
+
+            try
+            {
+                cmdUpdateUser.ExecuteNonQuery();
+            }
+            catch (SqlException ex)
+            {
+            }
+            finally
+            {
+                conn.Close();
+            }
         }
-
     }
 }

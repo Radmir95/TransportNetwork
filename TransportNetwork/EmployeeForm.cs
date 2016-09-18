@@ -1,23 +1,26 @@
 ﻿using System;
 using System.Windows.Forms;
-using TransportNetwork.DataAccessLayer.IRepository;
 using TransportNetwork.DataAccessLayer.Repository;
 using TransportNetwork.Domain.Entity;
+using TransportNetwork.Domain.Factory;
 
 namespace TransportNetwork.WebFormsApplication
 {
     public partial class EmployeeForm : Form
     {
+
+        public EmployeeRepository EmployeeRepository { get; set; }
+
         public EmployeeForm()
         {
+            EmployeeRepository = new EmployeeRepository();
             InitializeComponent();
         }
 
         private void EmployeeForm_Load(object sender, EventArgs e)
         {
 
-            IEmployeeRepository employeeRepository = new EmployeeRepository();
-            var employees = employeeRepository.GetEmployee();
+            var employees = EmployeeRepository.GetEmployee();
             foreach (var busDriver in employees)
             {
 
@@ -51,8 +54,16 @@ namespace TransportNetwork.WebFormsApplication
         private void addButton_Click(object sender, EventArgs e)
         {
 
-            IEmployeeRepository employeeRepository = new EmployeeRepository();
+            var employee = FillModelEmployee();
+            EmployeeRepository.AddEmployee(employee);
+            RestartForm();
 
+        }
+
+        public Employee FillModelEmployee()
+        {
+
+            var employeeId = listOfEmployees.SelectedItem;
             var name = nameTb.Text;
             var surname = surnameTb.Text;
             var middlename = middleTb.Text;
@@ -65,23 +76,47 @@ namespace TransportNetwork.WebFormsApplication
             var telephone = telephoneTb.Text;
             var passport = passportTb.Text;
 
-            var employee = new Employee(name, surname, middlename, experience, role, city, street, house, room, telephone, passport);
-            employeeRepository.AddEmployee(employee);
+            var factory = new EmployeeFactory();
+            var employee = factory.Create((int)employeeId, name, surname, middlename, experience, role, city, street, house,
+                room, telephone, passport);
+            return employee;
+        }
+
+        public void RestartForm()
+        {
+
+            Close();
+            var form = new EmployeeForm();
+            form.Show();
 
         }
 
         private void updateButton_Click(object sender, EventArgs e)
         {
 
+            var employee = FillModelEmployee();
+
+            EmployeeRepository.UpdateEmployee(employee);
+            RestartForm();
+
         }
 
         private void deleteButton_Click(object sender, EventArgs e)
         {
 
-
+            var employee = FillModelEmployee();
+            EmployeeRepository.DeleteEmployee(employee);
+            RestartForm();
 
         }
 
+        private void Unlogin_Click(object sender, EventArgs e)
+        {
 
+            Close();
+            var loginForm = new LoginForm();
+            loginForm.Show();
+
+        }
     }
 }

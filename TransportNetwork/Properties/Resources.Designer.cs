@@ -124,7 +124,7 @@ namespace TransportNetwork.WebFormsApplication.Properties {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Вы ввели неверные пароль или логин.
+        ///   Ищет локализованную строку, похожую на Вы ввели неверные логин или пароль.
         /// </summary>
         internal static string LoginForm_enterButton_Click_Error_Message {
             get {

@@ -26,15 +26,18 @@ namespace TransportNetwork.WebFormsApplication
                 switch (permission)
                 {
                     case "Administrator":
-                        var administratiorForm = new AdministratorForm();
-                        administratiorForm.Show();
+                        Hide();
+                        var administratorForm = new AdministratorForm();
+                        administratorForm.Show();
                         break;
                     case "Cashier":
+                        Hide();
                         var cashierForm = new CashierForm();
                         cashierForm.Show();
                         break;
 
                     case "Hr":
+                        Hide();
                         var employeeForm = new EmployeeForm();
                         employeeForm.Show();
                         break;

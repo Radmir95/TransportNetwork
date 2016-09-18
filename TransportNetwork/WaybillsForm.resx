@@ -117,28 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="ControlForm_InitializeComponent_Название" xml:space="preserve">
-    <value>Название</value>
-  </data>
-  <data name="ControlForm_InitializeComponent_Главная_форма" xml:space="preserve">
-    <value>Главная форма</value>
-  </data>
-  <data name="ControlForm_InitializeComponent_сотрудники" xml:space="preserve">
-    <value>сотрудники</value>
-  </data>
-  <data name="ControlForm_InitializeComponent_автобусы" xml:space="preserve">
-    <value>автобусы</value>
-  </data>
-  <data name="ControlForm_InitializeComponent_путевые_листы" xml:space="preserve">
-    <value>путевые листы</value>
-  </data>
-  <data name="ControlForm_InitializeComponent_рейсы" xml:space="preserve">
-    <value>рейсы</value>
-  </data>
-  <data name="ControlForm_InitializeComponent_продажа_билетов" xml:space="preserve">
-    <value>продажа билетов</value>
-  </data>
-  <data name="LoginForm_enterButton_Click_Error_Message" xml:space="preserve">
-    <value>Вы ввели неверные логин или пароль</value>
-  </data>
 </root>
