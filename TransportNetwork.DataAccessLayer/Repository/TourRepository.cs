@@ -10,6 +10,11 @@ namespace TransportNetwork.DataAccessLayer.Repository
 
         private readonly ConnectionContext _context;
 
+        public TourRepository()
+        {
+            _context = new ConnectionContext();
+        }
+
         public void AddTour(Tour tour)
         {
 
@@ -18,7 +23,7 @@ namespace TransportNetwork.DataAccessLayer.Repository
 
             var cmdAddTour = new SqlCommand("INSERT INTO Tour" +
             "(timeOfDeparture, timeOfArrival, distance, pointOfDeparture)"
-            + " VALUES (@timeOfDeparture, @timeOfArrival, @distance, @pointOfDeparture)", conn);
+            + " VALUES (@timeOfDeparture, @timeOfArrival, @distance, @pointOfDeparture, @pointOfArrival)", conn);
 
             var param = new SqlParameter();
 
@@ -42,6 +47,12 @@ namespace TransportNetwork.DataAccessLayer.Repository
             param = new SqlParameter();
             param.ParameterName = "@pointOfDeparture";
             param.Value = tour.PointOfDeparture;
+            param.SqlDbType = SqlDbType.Text;
+            cmdAddTour.Parameters.Add(param);
+
+            param = new SqlParameter();
+            param.ParameterName = "@pointOfArrival";
+            param.Value = tour.PointOfArrival;
             param.SqlDbType = SqlDbType.Text;
             cmdAddTour.Parameters.Add(param);
 

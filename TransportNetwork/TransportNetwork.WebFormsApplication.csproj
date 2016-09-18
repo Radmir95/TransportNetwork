@@ -59,6 +59,12 @@
     <Compile Include="ChangeBusDriverForm.Designer.cs">
       <DependentUpon>ChangeBusDriverForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CreateTour.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateTour.Designer.cs">
+      <DependentUpon>CreateTour.cs</DependentUpon>
+    </Compile>
     <Compile Include="EmployeeForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,6 +100,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ChangeBusDriverForm.resx">
       <DependentUpon>ChangeBusDriverForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateTour.resx">
+      <DependentUpon>CreateTour.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EmployeeForm.resx">
       <DependentUpon>EmployeeForm.cs</DependentUpon>

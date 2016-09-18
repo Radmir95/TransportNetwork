@@ -1,4 +1,6 @@
-﻿namespace TransportNetwork.WebFormsApplication
+﻿using TransportNetwork.DataAccessLayer.IRepository;
+
+namespace TransportNetwork.WebFormsApplication
 {
     partial class BussesForm
     {
@@ -28,6 +30,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            var busses = BusRepository.GetAllBusses();
+
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -175,6 +179,8 @@
             this.listOfBusses.Name = "listOfBusses";
             this.listOfBusses.Size = new System.Drawing.Size(121, 21);
             this.listOfBusses.TabIndex = 15;
+            listOfBusses.SelectedText = busses[0].NumberPlate;
+            this.listOfBusses.SelectedIndexChanged += new System.EventHandler(this.listOfBusses_SelectedIndexChanged);
             // 
             // button5
             // 
@@ -232,5 +238,7 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.ComboBox listOfBusses;
         private System.Windows.Forms.Button button5;
+
+        
     }
 }

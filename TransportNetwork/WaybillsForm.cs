@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace TransportNetwork.WebFormsApplication
@@ -17,6 +10,18 @@ namespace TransportNetwork.WebFormsApplication
             InitializeComponent();
         }
 
-   
+        private void Close_Click(object sender, EventArgs e)
+        {
+            Close();
+            var administrationForm = new AdministratorForm();
+            administrationForm.Show();
+        }
+
+        private void AddTour_Click(object sender, EventArgs e)
+        {
+            Close();
+            var createTour = new CreateTour();
+            createTour.Show();
+        }
     }
 }
