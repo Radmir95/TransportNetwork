@@ -27,9 +27,9 @@ namespace TransportNetwork.DataAccessLayer.Repository
             var bus = waybill.Bus;
 
             var cmdAddWaybill = new SqlCommand("INSERT INTO Waybill" +
-                                                "(ticketId, numberPlate, tourId)"
+                                                "(numberPlate, tourId)"
                                                 +
-                                                " VALUES (@ticketId, @numberPlate, @tourId)",
+                                                " VALUES (@numberPlate, @tourId)",
                 conn);
 
             var param = new SqlParameter();

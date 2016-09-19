@@ -11,10 +11,9 @@ namespace TransportNetwork.DataAccessLayer
         public static void Main(string[] args)
         {
 
-            EmployeeRepository carrier = new EmployeeRepository();
-            List<Employee> driver = carrier.GetEmployee();
-            Console.WriteLine(driver[0].City);
-
+            Tour tour = new Tour(new DateTime(08,10,2016), new DateTime(08,10,2016), 900, "Rfdf", "dfd" );
+            TourRepository repository = new TourRepository();
+            repository.AddTour(tour);
         }
 
 

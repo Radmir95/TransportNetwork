@@ -1,4 +1,5 @@
-﻿using System.Data;
+﻿using System;
+using System.Data;
 using System.Data.SqlClient;
 using TransportNetwork.DataAccessLayer.IRepository;
 using TransportNetwork.Domain.Entity;
@@ -22,7 +23,7 @@ namespace TransportNetwork.DataAccessLayer.Repository
             var conn = (SqlConnection)context;
 
             var cmdAddTour = new SqlCommand("INSERT INTO Tour" +
-            "(timeOfDeparture, timeOfArrival, distance, pointOfDeparture)"
+            "(timeOfDeparture, timeOfArrival, distance, pointOfDeparture, pointOfArrival)"
             + " VALUES (@timeOfDeparture, @timeOfArrival, @distance, @pointOfDeparture, @pointOfArrival)", conn);
 
             var param = new SqlParameter();
@@ -62,7 +63,7 @@ namespace TransportNetwork.DataAccessLayer.Repository
             }
             catch (SqlException ex)
             {
-               
+               Console.WriteLine(ex.ToString());
             }
             finally
             {

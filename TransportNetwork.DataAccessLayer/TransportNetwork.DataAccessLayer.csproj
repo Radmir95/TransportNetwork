@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{CDA7AC1F-BB19-4862-AB12-FBB423C51657}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>TransportNetwork.DataAccessLayer</RootNamespace>
     <AssemblyName>TransportNetwork.DataAccessLayer</AssemblyName>
