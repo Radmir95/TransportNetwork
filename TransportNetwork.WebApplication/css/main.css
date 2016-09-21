@@ -128,6 +128,7 @@ footer .socialIcons a.twitter{background:url("img/small-twitter.png") no-repeat;
 .button.iconRight i{right:20px;}
 .button i.more{background-image:url("img/more.png");}
 .button i.email{background-image:url("img/mail.png"); margin-top:-8px;}
+.spaces { margin: 5px;  }
 
 /*******************************************************************************************************************
 *  Responsive design                                                                                                    
