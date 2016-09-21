@@ -1,7 +1,7 @@
 ﻿using Microsoft.Owin;
 using Owin;
 
-[assembly: OwinStartupAttribute(typeof(TransportNetwork.WebApplication.Startup))]
+[assembly: OwinStartup(typeof(TransportNetwork.WebApplication.Startup))]
 namespace TransportNetwork.WebApplication
 {
     public partial class Startup {
