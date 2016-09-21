@@ -2,25 +2,7 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
-    <header class="clearFix">
-        <div class="wrap">
-            <a id="logo" href="#">Пассажироперевозки</a>
-            <hr>
-            <nav>
-                <div id="nav">
-                    <strong>Navigation</strong>
-                    <ul>
-                        <li>
-                            <input type="button" name="Registration" class="btn btn-default btn-lg spaces" value="Регистрация" />
-                        </li>
-                        <li>
-                            <input type="button" name="Login" value="Вход" class="btn btn-default btn-lg spaces" /></li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
-    </header>
-    <hr>
+   
     <div id="intro">
         <div class="inner">
             <div class="wrap clearFix">

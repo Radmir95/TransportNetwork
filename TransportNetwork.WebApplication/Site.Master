@@ -5,20 +5,42 @@
 <html>
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Соник</title>
+    <title>AutoGrad</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/print.css" media="print">
     <script src="Scripts/jquery-1.6.4.min.js"></script>
     <script src="Scripts/custom.js"></script>
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-
 </head>
 <body>
     <form runat="server">
+        <!--Header -->
+        <header class="clearFix">
+            <div class="wrap">
+                <a id="logo" href="Default.aspx">AutoGrad</a>
+                <hr>
+                <nav>
+                    <div id="nav">
+                        <strong>Navigation</strong>
+                        <ul>
+                            <li>
+                                <asp:Button ID="RegistrationButton" type="button" name="Registration" class="btn btn-default btn-lg spaces" OnClick="Registration_OnClick" Text="Регистрация" runat="server" />
+                            </li>
+                            <li>
+                                <asp:Button ID="LoginButton" type="button" name="Login" Text="Вход" class="btn btn-default btn-lg spaces" OnClick="Login_OnClick" runat="server" />
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <hr>
         <!--Main placeholder -->
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                
+            
             </asp:ContentPlaceHolder>
         </div>
     </form>

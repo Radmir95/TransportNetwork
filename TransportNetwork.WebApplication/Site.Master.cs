@@ -73,6 +73,18 @@ namespace TransportNetwork.WebApplication
         {
             Context.GetOwinContext().Authentication.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
         }
+
+        protected void Login_OnClick(object sender, EventArgs e)
+        {
+            Response.Redirect("Login.aspx");
+        }
+
+        protected void Registration_OnClick(object sender, EventArgs e)
+        {
+            Response.Redirect("Registration.aspx");
+        }
+
+
     }
 
 }
