@@ -47,7 +47,7 @@
                 </div>
             </div>
             <div class="clearFix">
-                 <div class="col floatLeft">
+                <div class="col floatLeft">
                     <img src="images/icon-tools.png" alt="" class="icon">
                     <h3>Высокая надежность</h3>
                     <p>Перед каждый рейсом все наши автомобили проходят тщательную проверку</p>
@@ -58,21 +58,26 @@
                     <p>У нас богатый опыт работы с клиентами. Мы на рынке уже более 3 лет</p>
                 </div>
             </div>
-           
+
             <div class="buttonCentered"><a href="#" class="button iconRight">TAKE A FEATURE TOUR <i class="more"></i></a></div>
             <h2>Что говорят о нас наши клиенты</h2>
             <ul class="cols clearFix">
                 <li>
-                    <p>Nullam id dolor id nibh ultricies vehicula id elit. Donec id elit non mi porta gravida at eget metus. Aenean lacinia bibendum nulla sed consectetur. Donec sed odio dui. Vivamus sagittis.</p>
-                    <p><strong>John Doe</strong>, Apple</p>
+                    <p>Хотелось бы выразить благодарность от лица всей нашей группы за поездку в Булгары, она удалась на славу. Нам удалось ни только получить яркие впечатления от экскурсии, но и провести время в дороге с комфортом, с приятным водителем и приятной музыкой.</p>
+                    <p><strong>Анна Гордеева</strong></p>
                 </li>
                 <li class="middle">
-                    <p>Nullam id dolor id nibh ultricies vehicula id elit. Donec id elit non mi porta gravida at eget metus. Aenean lacinia bibendum nulla sed consectetur. Donec sed odio dui. Vivamus sagittis.</p>
-                    <p><strong>John Doe</strong>, Apple</p>
+                    <p>
+                        Здравствуйте!
+Большое спасибо за транспортное сопровождение нашего мероприятия. Организация работы просто на высшем уровне. Приятно иметь дело с профессионалами. Рад буду обратиться к вам и в дальнейшем.
+Отдельное спасибо менеджеру Миляуше за профессиональное и доброжелательное отношение.
+Водителю Ильнуру за внимательное и человечное отношение к пассажирам, соблюдение расписания движения.
+                    </p>
+                    <p><strong>Александр Савченко</strong></p>
                 </li>
                 <li>
-                    <p>Nullam id dolor id nibh ultricies vehicula id elit. Donec id elit non mi porta gravida at eget metus. Aenean lacinia bibendum nulla sed consectetur. Donec sed odio dui. Vivamus sagittis.</p>
-                    <p><strong>John Doe</strong>, Apple</p>
+                    <p>Большое спасибо за поездку в Йошкар Олы! Водитель очень вежливый, нигде не торопил нас. Мы совершенно довольны. Отдельное спасибо Миляуше за терпеливое отношение!</p>
+                    <p><strong>Александр Шевченко</strong></p>
                 </li>
             </ul>
 
@@ -87,6 +92,4 @@
         </div>
     </div>
     <hr>
-   
-
 </asp:Content>
