@@ -85,6 +85,15 @@ namespace TransportNetwork.WebApplication {
         protected global::System.Web.UI.WebControls.TextBox LastName;
         
         /// <summary>
+        /// MiddleName элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox MiddleName;
+        
+        /// <summary>
         /// Password элемент управления.
         /// </summary>
         /// <remarks>
@@ -110,5 +119,14 @@ namespace TransportNetwork.WebApplication {
         /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox Email;
+        
+        /// <summary>
+        /// Telephone элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox Telephone;
     }
 }
