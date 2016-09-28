@@ -42,6 +42,7 @@
     <Compile Include="ConnectionContext.cs" />
     <Compile Include="IRepository\IBusRepository.cs" />
     <Compile Include="IRepository\IEmployeeRepository.cs" />
+    <Compile Include="IRepository\IPassengerRepository.cs" />
     <Compile Include="IRepository\ITicketRepository.cs" />
     <Compile Include="IRepository\ITourRepository.cs" />
     <Compile Include="IRepository\IUserPermissionRepository.cs" />
@@ -49,6 +50,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\BusRepository.cs" />
     <Compile Include="Repository\EmployeeRepository.cs" />
+    <Compile Include="Repository\PassengerRepository.cs" />
     <Compile Include="Repository\TicketRepository.cs" />
     <Compile Include="Repository\TourRepository.cs" />
     <Compile Include="Repository\UserPermissionRepository.cs" />
