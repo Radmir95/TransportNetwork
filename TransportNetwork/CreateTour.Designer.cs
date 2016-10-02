@@ -28,12 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pointOfArrivalTb = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.timeOfArrivalTb = new System.Windows.Forms.TextBox();
             this.distanceTb = new System.Windows.Forms.TextBox();
-            this.pointOfDepartureTb = new System.Windows.Forms.TextBox();
-            this.timeOfDepartureTb = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -50,51 +46,27 @@
             this.numberPlateTb = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.pointOfDepartureList = new System.Windows.Forms.ComboBox();
+            this.pointOfArrivalList = new System.Windows.Forms.ComboBox();
+            this.timeOfDepartureTb = new System.Windows.Forms.MaskedTextBox();
+            this.timeOfArrivalTb = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
-            // 
-            // pointOfArrivalTb
-            // 
-            this.pointOfArrivalTb.Location = new System.Drawing.Point(120, 238);
-            this.pointOfArrivalTb.Name = "pointOfArrivalTb";
-            this.pointOfArrivalTb.Size = new System.Drawing.Size(91, 20);
-            this.pointOfArrivalTb.TabIndex = 64;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(12, 238);
+            this.label13.Location = new System.Drawing.Point(13, 201);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(91, 13);
             this.label13.TabIndex = 63;
             this.label13.Text = "Место прибытия";
             // 
-            // timeOfArrivalTb
-            // 
-            this.timeOfArrivalTb.Location = new System.Drawing.Point(120, 124);
-            this.timeOfArrivalTb.Name = "timeOfArrivalTb";
-            this.timeOfArrivalTb.Size = new System.Drawing.Size(91, 20);
-            this.timeOfArrivalTb.TabIndex = 62;
-            // 
             // distanceTb
             // 
-            this.distanceTb.Location = new System.Drawing.Point(120, 164);
+            this.distanceTb.Location = new System.Drawing.Point(120, 233);
             this.distanceTb.Name = "distanceTb";
-            this.distanceTb.Size = new System.Drawing.Size(91, 20);
+            this.distanceTb.Size = new System.Drawing.Size(100, 20);
             this.distanceTb.TabIndex = 61;
-            // 
-            // pointOfDepartureTb
-            // 
-            this.pointOfDepartureTb.Location = new System.Drawing.Point(120, 198);
-            this.pointOfDepartureTb.Name = "pointOfDepartureTb";
-            this.pointOfDepartureTb.Size = new System.Drawing.Size(91, 20);
-            this.pointOfDepartureTb.TabIndex = 60;
-            // 
-            // timeOfDepartureTb
-            // 
-            this.timeOfDepartureTb.Location = new System.Drawing.Point(120, 92);
-            this.timeOfDepartureTb.Name = "timeOfDepartureTb";
-            this.timeOfDepartureTb.Size = new System.Drawing.Size(91, 20);
-            this.timeOfDepartureTb.TabIndex = 59;
             // 
             // label9
             // 
@@ -117,7 +89,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(12, 164);
+            this.label11.Location = new System.Drawing.Point(12, 233);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(67, 13);
             this.label11.TabIndex = 56;
@@ -126,7 +98,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(12, 198);
+            this.label12.Location = new System.Drawing.Point(13, 161);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(107, 13);
             this.label12.TabIndex = 55;
@@ -214,6 +186,7 @@
             this.numberPlateTb.Name = "numberPlateTb";
             this.numberPlateTb.Size = new System.Drawing.Size(90, 21);
             this.numberPlateTb.TabIndex = 74;
+            this.numberPlateTb.SelectedIndexChanged += new System.EventHandler(this.numberPlateTb_SelectedIndexChanged);
             // 
             // button1
             // 
@@ -235,11 +208,61 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.Back_Click);
             // 
+            // pointOfDepartureList
+            // 
+            this.pointOfDepartureList.FormattingEnabled = true;
+            this.pointOfDepartureList.Items.AddRange(new object[] {
+            "Казань"});
+            this.pointOfDepartureList.Location = new System.Drawing.Point(121, 158);
+            this.pointOfDepartureList.Name = "pointOfDepartureList";
+            this.pointOfDepartureList.Size = new System.Drawing.Size(99, 21);
+            this.pointOfDepartureList.TabIndex = 77;
+            this.pointOfDepartureList.Text = "Казань";
+            // 
+            // pointOfArrivalList
+            // 
+            this.pointOfArrivalList.FormattingEnabled = true;
+            this.pointOfArrivalList.Items.AddRange(new object[] {
+            "Москва",
+            "Альметьевск",
+            "УФА",
+            "Набережные челны",
+            "Саратов",
+            "Санкт-Петербург",
+            "Чебоксары"});
+            this.pointOfArrivalList.Location = new System.Drawing.Point(120, 193);
+            this.pointOfArrivalList.Name = "pointOfArrivalList";
+            this.pointOfArrivalList.Size = new System.Drawing.Size(100, 21);
+            this.pointOfArrivalList.TabIndex = 78;
+            this.pointOfArrivalList.SelectedIndexChanged += new System.EventHandler(this.pointOfArrivalList_SelectedIndexChanged);
+            // 
+            // timeOfDepartureTb
+            // 
+            this.timeOfDepartureTb.Location = new System.Drawing.Point(120, 96);
+            this.timeOfDepartureTb.Mask = "00/00/0000 90:00";
+            this.timeOfDepartureTb.Name = "timeOfDepartureTb";
+            this.timeOfDepartureTb.Size = new System.Drawing.Size(100, 20);
+            this.timeOfDepartureTb.TabIndex = 79;
+            this.timeOfDepartureTb.ValidatingType = typeof(System.DateTime);
+            // 
+            // timeOfArrivalTb
+            // 
+            this.timeOfArrivalTb.Location = new System.Drawing.Point(120, 128);
+            this.timeOfArrivalTb.Mask = "00/00/0000 90:00";
+            this.timeOfArrivalTb.Name = "timeOfArrivalTb";
+            this.timeOfArrivalTb.Size = new System.Drawing.Size(100, 20);
+            this.timeOfArrivalTb.TabIndex = 80;
+            this.timeOfArrivalTb.ValidatingType = typeof(System.DateTime);
+            // 
             // CreateTour
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(456, 386);
+            this.Controls.Add(this.timeOfArrivalTb);
+            this.Controls.Add(this.timeOfDepartureTb);
+            this.Controls.Add(this.pointOfArrivalList);
+            this.Controls.Add(this.pointOfDepartureList);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.numberPlateTb);
@@ -251,12 +274,8 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.pointOfArrivalTb);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.timeOfArrivalTb);
             this.Controls.Add(this.distanceTb);
-            this.Controls.Add(this.pointOfDepartureTb);
-            this.Controls.Add(this.timeOfDepartureTb);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label11);
@@ -270,13 +289,8 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox pointOfArrivalTb;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox timeOfArrivalTb;
         private System.Windows.Forms.TextBox distanceTb;
-        private System.Windows.Forms.TextBox pointOfDepartureTb;
-        private System.Windows.Forms.TextBox timeOfDepartureTb;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
@@ -293,5 +307,9 @@
         private System.Windows.Forms.ComboBox numberPlateTb;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ComboBox pointOfDepartureList;
+        private System.Windows.Forms.ComboBox pointOfArrivalList;
+        private System.Windows.Forms.MaskedTextBox timeOfDepartureTb;
+        private System.Windows.Forms.MaskedTextBox timeOfArrivalTb;
     }
 }

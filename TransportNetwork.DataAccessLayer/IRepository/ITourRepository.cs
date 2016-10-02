@@ -8,6 +8,8 @@ namespace TransportNetwork.DataAccessLayer.IRepository
         void AddTour(Tour tour);
         void DeleteTour(Tour tour);
         void UpdateTour(Tour tour);
+        int GetTourId(Tour tour);
+        Tour GetTourById(int tourId);
 
     }
 }

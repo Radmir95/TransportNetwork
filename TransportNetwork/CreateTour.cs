@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using TransportNetwork.DataAccessLayer.Repository;
 using TransportNetwork.Domain.Entity;
+using TransportNetwork.WebFormsApplication.Helpers;
 
 namespace TransportNetwork.WebFormsApplication
 {
@@ -14,10 +15,10 @@ namespace TransportNetwork.WebFormsApplication
         {
             BusRepository = new BusRepository();
             InitializeComponent();
-            FillForm();
+            InitializeBusForm();
         }
 
-        private void FillForm()
+        private void InitializeBusForm()
         {
             var busses = BusRepository.GetAllBusses();
             foreach (var bus in busses)
@@ -41,16 +42,16 @@ namespace TransportNetwork.WebFormsApplication
         {
 
             var busses = BusRepository.GetAllBusses();
-            Bus bus = null;
-            foreach (var busLoop in busses)
-            {
-                if (busLoop.NumberPlate == numberPlateTb.Text)
-                {
-                    bus = busLoop;
-                }
-            }
+            var bus = busses[numberPlateTb.SelectedIndex];
 
-            var tour = new Tour(Convert.ToDateTime(timeOfDepartureTb.Text), Convert.ToDateTime(timeOfArrivalTb.Text), Convert.ToInt32(distanceTb.Text), pointOfDepartureTb.Text, pointOfArrivalTb.Text);
+            var tour = new Tour(Convert.ToDateTime(timeOfDepartureTb.Text), Convert.ToDateTime(timeOfArrivalTb.Text), Convert.ToInt32(distanceTb.Text), pointOfDepartureList.Text, pointOfArrivalList.Text);
+
+            var tourRepository = new TourRepository();
+            tourRepository.AddTour(tour);
+            var tourId = tourRepository.GetTourId(tour);
+
+            tour.SetTourId(tourId);
+
             var waybill = new Waybill(bus, tour);
             var waybillRepository = new WaybillRepository();
             waybillRepository.AddWaybill(waybill);
@@ -58,6 +59,33 @@ namespace TransportNetwork.WebFormsApplication
             Close();
             var waybillForm = new WaybillsForm();
             waybillForm.Show();
+
+        }
+
+        private void numberPlateTb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            var busses = BusRepository.GetAllBusses();
+            FillBusForm(busses[numberPlateTb.SelectedIndex]);
+
+        }
+
+        private void FillBusForm(Bus bus)
+        {
+
+            markTb.Text = bus.Brand;
+            modelTb.Text = bus.Model;
+            seatsTb.Text = bus.NumberOfSeats.ToString();
+
+        }
+
+        private void pointOfArrivalList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            var pointOfArrival = pointOfArrivalList.Text;
+            var pointOfDeparture = pointOfDepartureList.Text;
+
+            distanceTb.Text = DistanceBetweenCities.GetDistance(pointOfDeparture, pointOfArrival).ToString();
 
         }
     }

@@ -49,6 +49,28 @@ namespace TransportNetwork.WebFormsApplication
         private void listOfEmployees_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+            var employees = EmployeeRepository.GetEmployee();
+            var currentEmployee = employees[listOfEmployees.SelectedIndex];
+            FillForm(currentEmployee);
+
+
+        }
+
+        private void FillForm(Employee employee)
+        {
+
+            nameTb.Text = employee.FirstName;
+            surnameTb.Text = employee.SurName;
+            middleTb.Text = employee.MiddleName;
+            experienceTb.Text = employee.Experience.ToString();
+            roleTb.Text = employee.Role;
+            cityTb.Text = employee.City;
+            streetTb.Text = employee.Street;
+            houseTb.Text = employee.House.ToString();
+            roomTb.Text = employee.Room.ToString();
+            telephoneTb.Text = employee.Telephone;
+            passportTb.Text = employee.Passport;
+
         }
 
         private void addButton_Click(object sender, EventArgs e)

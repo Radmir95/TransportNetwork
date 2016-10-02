@@ -87,5 +87,90 @@ namespace TransportNetwork.DataAccessLayer.Repository
 
 
         }
+
+        public int GetTourId(Tour tour)
+        {
+
+            var context = _context.Create();
+            var conn = (SqlConnection)context;
+
+            var cmdGetTourId =
+                new SqlCommand(
+                    "SELECT tourId FROM Tour WHERE distance = @distance",
+                    conn);
+
+            var param = new SqlParameter();
+
+            param.ParameterName = "@distance";
+            param.Value = tour.Distance;
+            param.SqlDbType = SqlDbType.Int;
+            cmdGetTourId.Parameters.Add(param);
+
+            var tourId = 0;
+
+            try
+            {
+                using (var dr = cmdGetTourId.ExecuteReader())
+                {
+                    while (dr.Read())
+                    {
+                        tourId = (int)dr["tourId"];
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex);
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return tourId;
+
+        }
+
+        public Tour GetTourById(int tourId)
+        {
+
+            var context = _context.Create();
+            var conn = (SqlConnection)context;
+
+            var cmdGetTour =
+                new SqlCommand(
+                    "SELECT tourId, timeOfDeparture, timeOfArrival, distance, pointOfDeparture, pointOfArrival FROM Tour WHERE tourId = @tourId",
+                    conn);
+
+            var param = new SqlParameter();
+
+            param.ParameterName = "@tourId";
+            param.Value = tourId;
+            param.SqlDbType = SqlDbType.Int;
+            cmdGetTour.Parameters.Add(param);
+
+            Tour tour = null;
+
+            try
+            {
+                using (var dr = cmdGetTour.ExecuteReader())
+                {
+                    while (dr.Read())
+                    {
+                        tour = new Tour((DateTime)dr["timeOfDeparture"], (DateTime)dr["timeOfArrival"], (int)dr["distance"], dr["pointOfDeparture"].ToString(), dr["pointOfArrival"].ToString());
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return tour;
+        }
     }
 }

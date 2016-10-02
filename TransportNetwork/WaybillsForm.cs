@@ -8,6 +8,14 @@ namespace TransportNetwork.WebFormsApplication
         public WaybillsForm()
         {
             InitializeComponent();
+            InitializeForm();
+        }
+
+        private void InitializeForm()
+        {
+
+
+
         }
 
         private void Close_Click(object sender, EventArgs e)

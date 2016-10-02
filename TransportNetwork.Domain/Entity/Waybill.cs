@@ -18,15 +18,15 @@
 
         }
 
-        public int SaleId { get; private set; }
+        public int WaybillId { get; private set; }
         public Passenger Passenger { get; private set; }
         public Bus Bus { get; private set; }
         public Ticket Ticket { get; private set; }
         public Tour Tour { get; private set; }
 
-        internal void SetSaleId(int saleId)
+        public void SetWaybillId(int waybillId)
         {
-            SaleId = saleId;
+            WaybillId = waybillId;
         }
     }
 }

@@ -48,7 +48,7 @@ namespace TransportNetwork.DataAccessLayer.Repository
             {
                 cmdAddTicket.ExecuteNonQuery();
             }
-            catch (SqlException ex)
+            catch (SqlException)
             {
 
             }

@@ -118,22 +118,19 @@ namespace TransportNetwork.WebFormsApplication
         {
 
             var busses = BusRepository.GetAllBusses();
-
-            foreach (var bus in busses)
-            {
-                if (bus.NumberPlate != listOfBusses.Text) continue;
-                markTb.Text = bus.Brand;
-                modelTb.Text = bus.Model;
-                seatsTb.Text = bus.NumberOfSeats.ToString();
-                driverTb.Text = bus.EmployeeId.ToString();
-            }
-            if (busses.Count <= 0) return;
-            listOfBusses.Text = busses[0].NumberPlate;
-            markTb.Text = busses[0].Brand;
-            modelTb.Text = busses[0].Model;
-            seatsTb.Text = busses[0].NumberOfSeats.ToString();
-            driverTb.Text = busses[0].EmployeeId.ToString();
+            FillFields(busses[listOfBusses.SelectedIndex]);
 
         }
+
+
+        private void FillFields(Bus bus)
+        {
+
+            markTb.Text = bus.Brand;
+            modelTb.Text = bus.Model;
+            seatsTb.Text = bus.NumberOfSeats.ToString();
+
+        }
+
     }
 }

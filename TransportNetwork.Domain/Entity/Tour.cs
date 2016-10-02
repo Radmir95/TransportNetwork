@@ -29,7 +29,7 @@ namespace TransportNetwork.Domain.Entity
             PointOfArrival = pointOfArrival;
         }
 
-        internal void SetTourId(int tourId)
+        public void SetTourId(int tourId)
         {
             TourId = tourId;
         }

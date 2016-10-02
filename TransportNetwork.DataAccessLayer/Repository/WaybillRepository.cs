@@ -1,4 +1,5 @@
-﻿using System.Data;
+﻿using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using TransportNetwork.DataAccessLayer.IRepository;
 using TransportNetwork.Domain.Entity;
@@ -52,11 +53,64 @@ namespace TransportNetwork.DataAccessLayer.Repository
             }
             catch (SqlException)
             {
+
             }
             finally
             {
                 conn.Close();
             }
+
+        }
+
+        public List<Waybill> GetAllWaybills()
+        {
+
+            var context = _context.Create();
+            var conn = (SqlConnection)context;
+
+            var cmdGetAllWaybills =
+                new SqlCommand(
+                    "SELECT waybillId, ticketId, numberPlate, toureId FROM Waybill",
+                    conn);
+
+            var waybills = new List<Waybill>();
+
+            var tourRepository = new TourRepository();
+
+            try
+            {
+                using (var dr = cmdGetAllWaybills.ExecuteReader())
+                {
+                    while (dr.Read())
+                    {
+
+                        if (dr["ticketId"] != null)
+                        {
+                            //
+                        }
+                        else
+                        {
+                            var waybillId = (int) dr["waybillId"];
+                            var numberPlate = dr["numberPlate"].ToString();
+                            var tourId = (int) dr["tourId"];
+
+
+                        }
+                        var waybill = new Waybill();
+                       
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                var t = ex.Message;
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return waybills;
 
         }
     }
