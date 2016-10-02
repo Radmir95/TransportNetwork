@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using TransportNetwork.DataAccessLayer.Repository;
 
 namespace TransportNetwork.WebFormsApplication
 {
@@ -14,7 +15,13 @@ namespace TransportNetwork.WebFormsApplication
         private void InitializeForm()
         {
 
-
+            var waybillRepository = new WaybillRepository();
+            var waybills = waybillRepository.GetAllWaybills();
+            foreach (var waybill in waybills)
+            {
+                listOfWaybills.Items.Add(waybill.WaybillId);
+            }
+            
 
         }
 

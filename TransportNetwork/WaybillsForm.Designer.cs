@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.listOfEmployees = new System.Windows.Forms.ComboBox();
+            this.listOfWaybills = new System.Windows.Forms.ComboBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -77,13 +77,13 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Путевой лист";
             // 
-            // listOfEmployees
+            // listOfWaybills
             // 
-            this.listOfEmployees.FormattingEnabled = true;
-            this.listOfEmployees.Location = new System.Drawing.Point(251, 12);
-            this.listOfEmployees.Name = "listOfEmployees";
-            this.listOfEmployees.Size = new System.Drawing.Size(92, 21);
-            this.listOfEmployees.TabIndex = 30;
+            this.listOfWaybills.FormattingEnabled = true;
+            this.listOfWaybills.Location = new System.Drawing.Point(251, 12);
+            this.listOfWaybills.Name = "listOfWaybills";
+            this.listOfWaybills.Size = new System.Drawing.Size(92, 21);
+            this.listOfWaybills.TabIndex = 30;
             // 
             // checkBox1
             // 
@@ -426,7 +426,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.listOfEmployees);
+            this.Controls.Add(this.listOfWaybills);
             this.Controls.Add(this.label1);
             this.Name = "WaybillsForm";
             this.Text = "Waybills";
@@ -438,7 +438,7 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox listOfEmployees;
+        private System.Windows.Forms.ComboBox listOfWaybills;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;

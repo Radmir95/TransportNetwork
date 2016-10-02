@@ -76,6 +76,7 @@ namespace TransportNetwork.DataAccessLayer.Repository
             var waybills = new List<Waybill>();
 
             var tourRepository = new TourRepository();
+            var busRepository = new BusRepository();
 
             try
             {
@@ -93,11 +94,19 @@ namespace TransportNetwork.DataAccessLayer.Repository
                             var waybillId = (int) dr["waybillId"];
                             var numberPlate = dr["numberPlate"].ToString();
                             var tourId = (int) dr["tourId"];
-
-
+                            var tour = tourRepository.GetTourById(tourId);
+                            var buses = busRepository.GetAllBusses();
+                            Bus bus = null;
+                            foreach (var busLoop in buses)
+                            {
+                                if (busLoop.NumberPlate == numberPlate)
+                                    bus = busLoop;
+                            }
+                            var waybill = new Waybill(bus, tour);
+                            waybill.SetWaybillId(waybillId);
+                            waybills.Add(waybill);
                         }
-                        var waybill = new Waybill();
-                       
+                        
                     }
                 }
             }
