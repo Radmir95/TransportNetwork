@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using TransportNetwork.DataAccessLayer.IRepository;
@@ -70,7 +71,7 @@ namespace TransportNetwork.DataAccessLayer.Repository
 
             var cmdGetAllWaybills =
                 new SqlCommand(
-                    "SELECT waybillId, ticketId, numberPlate, toureId FROM Waybill",
+                    "SELECT waybillId, ticketId, numberPlate, tourId FROM Waybill",
                     conn);
 
             var waybills = new List<Waybill>();
@@ -84,8 +85,7 @@ namespace TransportNetwork.DataAccessLayer.Repository
                 {
                     while (dr.Read())
                     {
-
-                        if (dr["ticketId"] != null)
+                        if (dr["ticketId"] != DBNull.Value)
                         {
                             //
                         }

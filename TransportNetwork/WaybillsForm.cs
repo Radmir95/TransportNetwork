@@ -17,12 +17,12 @@ namespace TransportNetwork.WebFormsApplication
 
             var waybillRepository = new WaybillRepository();
             var waybills = waybillRepository.GetAllWaybills();
+
             foreach (var waybill in waybills)
             {
                 listOfWaybills.Items.Add(waybill.WaybillId);
             }
             
-
         }
 
         private void Close_Click(object sender, EventArgs e)

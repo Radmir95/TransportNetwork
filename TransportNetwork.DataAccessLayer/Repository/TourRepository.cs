@@ -61,9 +61,9 @@ namespace TransportNetwork.DataAccessLayer.Repository
             {
                 cmdAddTour.ExecuteNonQuery();
             }
-            catch (SqlException ex)
+            catch (SqlException)
             {
-               Console.WriteLine(ex.ToString());
+
             }
             finally
             {
@@ -118,9 +118,9 @@ namespace TransportNetwork.DataAccessLayer.Repository
                     }
                 }
             }
-            catch (SqlException ex)
+            catch (SqlException)
             {
-                Console.WriteLine(ex);
+
             }
             finally
             {
