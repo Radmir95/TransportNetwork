@@ -37,35 +37,35 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.numberPlateTb = new System.Windows.Forms.TextBox();
+            this.numberOfSeatsTb = new System.Windows.Forms.TextBox();
+            this.modelTb = new System.Windows.Forms.TextBox();
+            this.markTb = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.dateOfArrivalTb = new System.Windows.Forms.TextBox();
+            this.distanceTb = new System.Windows.Forms.TextBox();
+            this.pointOfDepartureTb = new System.Windows.Forms.TextBox();
+            this.dataOfDepartureTb = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.pointOfArrival = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.firstNameTb = new System.Windows.Forms.TextBox();
+            this.surNameTb = new System.Windows.Forms.TextBox();
+            this.telephoneTb = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.listOfPassenger = new System.Windows.Forms.ComboBox();
             this.button3 = new System.Windows.Forms.Button();
             this.label19 = new System.Windows.Forms.Label();
-            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.numberOfPassengerTb = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -149,33 +149,33 @@
             this.label7.TabIndex = 38;
             this.label7.Text = "Номер";
             // 
-            // textBox1
+            // numberPlateTb
             // 
-            this.textBox1.Location = new System.Drawing.Point(78, 153);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(90, 20);
-            this.textBox1.TabIndex = 39;
+            this.numberPlateTb.Location = new System.Drawing.Point(78, 153);
+            this.numberPlateTb.Name = "numberPlateTb";
+            this.numberPlateTb.Size = new System.Drawing.Size(90, 20);
+            this.numberPlateTb.TabIndex = 39;
             // 
-            // textBox2
+            // numberOfSeatsTb
             // 
-            this.textBox2.Location = new System.Drawing.Point(78, 259);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(90, 20);
-            this.textBox2.TabIndex = 40;
+            this.numberOfSeatsTb.Location = new System.Drawing.Point(78, 259);
+            this.numberOfSeatsTb.Name = "numberOfSeatsTb";
+            this.numberOfSeatsTb.Size = new System.Drawing.Size(90, 20);
+            this.numberOfSeatsTb.TabIndex = 40;
             // 
-            // textBox3
+            // modelTb
             // 
-            this.textBox3.Location = new System.Drawing.Point(78, 225);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(90, 20);
-            this.textBox3.TabIndex = 41;
+            this.modelTb.Location = new System.Drawing.Point(78, 225);
+            this.modelTb.Name = "modelTb";
+            this.modelTb.Size = new System.Drawing.Size(90, 20);
+            this.modelTb.TabIndex = 41;
             // 
-            // textBox4
+            // markTb
             // 
-            this.textBox4.Location = new System.Drawing.Point(78, 185);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(90, 20);
-            this.textBox4.TabIndex = 42;
+            this.markTb.Location = new System.Drawing.Point(78, 185);
+            this.markTb.Name = "markTb";
+            this.markTb.Size = new System.Drawing.Size(90, 20);
+            this.markTb.TabIndex = 42;
             // 
             // label8
             // 
@@ -186,33 +186,33 @@
             this.label8.TabIndex = 43;
             this.label8.Text = "Рейс:";
             // 
-            // textBox5
+            // dateOfArrivalTb
             // 
-            this.textBox5.Location = new System.Drawing.Point(313, 182);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(91, 20);
-            this.textBox5.TabIndex = 51;
+            this.dateOfArrivalTb.Location = new System.Drawing.Point(313, 182);
+            this.dateOfArrivalTb.Name = "dateOfArrivalTb";
+            this.dateOfArrivalTb.Size = new System.Drawing.Size(91, 20);
+            this.dateOfArrivalTb.TabIndex = 51;
             // 
-            // textBox6
+            // distanceTb
             // 
-            this.textBox6.Location = new System.Drawing.Point(313, 222);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(91, 20);
-            this.textBox6.TabIndex = 50;
+            this.distanceTb.Location = new System.Drawing.Point(313, 222);
+            this.distanceTb.Name = "distanceTb";
+            this.distanceTb.Size = new System.Drawing.Size(91, 20);
+            this.distanceTb.TabIndex = 50;
             // 
-            // textBox7
+            // pointOfDepartureTb
             // 
-            this.textBox7.Location = new System.Drawing.Point(313, 256);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(91, 20);
-            this.textBox7.TabIndex = 49;
+            this.pointOfDepartureTb.Location = new System.Drawing.Point(313, 256);
+            this.pointOfDepartureTb.Name = "pointOfDepartureTb";
+            this.pointOfDepartureTb.Size = new System.Drawing.Size(91, 20);
+            this.pointOfDepartureTb.TabIndex = 49;
             // 
-            // textBox8
+            // dataOfDepartureTb
             // 
-            this.textBox8.Location = new System.Drawing.Point(313, 150);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(91, 20);
-            this.textBox8.TabIndex = 48;
+            this.dataOfDepartureTb.Location = new System.Drawing.Point(313, 150);
+            this.dataOfDepartureTb.Name = "dataOfDepartureTb";
+            this.dataOfDepartureTb.Size = new System.Drawing.Size(91, 20);
+            this.dataOfDepartureTb.TabIndex = 48;
             // 
             // label9
             // 
@@ -250,12 +250,12 @@
             this.label12.TabIndex = 44;
             this.label12.Text = "Место отправления";
             // 
-            // textBox9
+            // pointOfArrival
             // 
-            this.textBox9.Location = new System.Drawing.Point(313, 296);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(91, 20);
-            this.textBox9.TabIndex = 53;
+            this.pointOfArrival.Location = new System.Drawing.Point(313, 296);
+            this.pointOfArrival.Name = "pointOfArrival";
+            this.pointOfArrival.Size = new System.Drawing.Size(91, 20);
+            this.pointOfArrival.TabIndex = 53;
             // 
             // label13
             // 
@@ -275,26 +275,26 @@
             this.label14.TabIndex = 54;
             this.label14.Text = "Пассажиры:";
             // 
-            // textBox10
+            // firstNameTb
             // 
-            this.textBox10.Location = new System.Drawing.Point(493, 185);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(100, 20);
-            this.textBox10.TabIndex = 62;
+            this.firstNameTb.Location = new System.Drawing.Point(493, 185);
+            this.firstNameTb.Name = "firstNameTb";
+            this.firstNameTb.Size = new System.Drawing.Size(100, 20);
+            this.firstNameTb.TabIndex = 62;
             // 
-            // textBox11
+            // surNameTb
             // 
-            this.textBox11.Location = new System.Drawing.Point(493, 225);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(100, 20);
-            this.textBox11.TabIndex = 61;
+            this.surNameTb.Location = new System.Drawing.Point(493, 225);
+            this.surNameTb.Name = "surNameTb";
+            this.surNameTb.Size = new System.Drawing.Size(100, 20);
+            this.surNameTb.TabIndex = 61;
             // 
-            // textBox12
+            // telephoneTb
             // 
-            this.textBox12.Location = new System.Drawing.Point(493, 259);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(100, 20);
-            this.textBox12.TabIndex = 60;
+            this.telephoneTb.Location = new System.Drawing.Point(493, 259);
+            this.telephoneTb.Name = "telephoneTb";
+            this.telephoneTb.Size = new System.Drawing.Size(100, 20);
+            this.telephoneTb.TabIndex = 60;
             // 
             // label15
             // 
@@ -351,13 +351,13 @@
             this.button2.Text = "Снять рейс";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
+            // listOfPassenger
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(493, 152);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(100, 21);
-            this.comboBox1.TabIndex = 65;
+            this.listOfPassenger.FormattingEnabled = true;
+            this.listOfPassenger.Location = new System.Drawing.Point(493, 152);
+            this.listOfPassenger.Name = "listOfPassenger";
+            this.listOfPassenger.Size = new System.Drawing.Size(100, 21);
+            this.listOfPassenger.TabIndex = 65;
             // 
             // button3
             // 
@@ -378,47 +378,47 @@
             this.label19.TabIndex = 67;
             this.label19.Text = "Количество";
             // 
-            // textBox13
+            // numberOfPassengerTb
             // 
-            this.textBox13.Location = new System.Drawing.Point(493, 296);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(100, 20);
-            this.textBox13.TabIndex = 68;
+            this.numberOfPassengerTb.Location = new System.Drawing.Point(493, 296);
+            this.numberOfPassengerTb.Name = "numberOfPassengerTb";
+            this.numberOfPassengerTb.Size = new System.Drawing.Size(100, 20);
+            this.numberOfPassengerTb.TabIndex = 68;
             // 
             // WaybillsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(621, 397);
-            this.Controls.Add(this.textBox13);
+            this.Controls.Add(this.numberOfPassengerTb);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.listOfPassenger);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox10);
-            this.Controls.Add(this.textBox11);
-            this.Controls.Add(this.textBox12);
+            this.Controls.Add(this.firstNameTb);
+            this.Controls.Add(this.surNameTb);
+            this.Controls.Add(this.telephoneTb);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.label14);
-            this.Controls.Add(this.textBox9);
+            this.Controls.Add(this.pointOfArrival);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox8);
+            this.Controls.Add(this.dateOfArrivalTb);
+            this.Controls.Add(this.distanceTb);
+            this.Controls.Add(this.pointOfDepartureTb);
+            this.Controls.Add(this.dataOfDepartureTb);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.markTb);
+            this.Controls.Add(this.modelTb);
+            this.Controls.Add(this.numberOfSeatsTb);
+            this.Controls.Add(this.numberPlateTb);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -446,34 +446,34 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox numberPlateTb;
+        private System.Windows.Forms.TextBox numberOfSeatsTb;
+        private System.Windows.Forms.TextBox modelTb;
+        private System.Windows.Forms.TextBox markTb;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox dateOfArrivalTb;
+        private System.Windows.Forms.TextBox distanceTb;
+        private System.Windows.Forms.TextBox pointOfDepartureTb;
+        private System.Windows.Forms.TextBox dataOfDepartureTb;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox pointOfArrival;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.TextBox firstNameTb;
+        private System.Windows.Forms.TextBox surNameTb;
+        private System.Windows.Forms.TextBox telephoneTb;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox listOfPassenger;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.TextBox textBox13;
+        private System.Windows.Forms.TextBox numberOfPassengerTb;
     }
 }
