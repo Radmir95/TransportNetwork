@@ -1,11 +1,16 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 using TransportNetwork.DataAccessLayer.Repository;
+using TransportNetwork.Domain.Entity;
 
 namespace TransportNetwork.WebFormsApplication
 {
     public partial class WaybillsForm : Form
     {
+
+        private WaybillRepository _waybillRepository;
+
         public WaybillsForm()
         {
             InitializeComponent();
@@ -15,12 +20,16 @@ namespace TransportNetwork.WebFormsApplication
         private void InitializeForm()
         {
 
-            var waybillRepository = new WaybillRepository();
-            var waybills = waybillRepository.GetAllWaybills();
+            _waybillRepository = new WaybillRepository();
+            var waybills = _waybillRepository.GetAllWaybills();
 
-            foreach (var waybillInLoop in waybills)
+            if (waybills.Count == 0) return;
+
+            var distinctWaybills = GetListOfDifferentWaybills(waybills);
+
+            foreach (var waybillInLoop in distinctWaybills)
             {
-                listOfWaybills.Items.Add(waybillInLoop.WaybillId);
+                listOfWaybills.Items.Add(waybillInLoop);
             }
 
             var waybill = waybills[0];
@@ -42,6 +51,26 @@ namespace TransportNetwork.WebFormsApplication
 
         }
 
+        private List<int> GetListOfDifferentWaybills(IReadOnlyList<Waybill> waybills)
+        {
+            if (waybills.Count == 0) return null;
+
+            var prevTour = waybills[0].Tour.TourId;
+
+            var waybillId = new List<int>();
+
+            foreach (var waybill in waybills)
+            {
+
+                if (waybill.Tour.TourId == prevTour) continue;
+                prevTour = waybill.Tour.TourId;
+                waybillId.Add(waybill.WaybillId);
+
+            }
+            return waybillId;
+
+        }
+
         private void Close_Click(object sender, EventArgs e)
         {
             Close();
@@ -54,6 +83,15 @@ namespace TransportNetwork.WebFormsApplication
             Close();
             var createTour = new CreateTour();
             createTour.Show();
+        }
+
+        private void listOfWaybills_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            var waybills = _waybillRepository.GetAllWaybills();
+            var waybill = waybills[listOfWaybills.SelectedIndex];
+            //TODO
+
         }
     }
 }

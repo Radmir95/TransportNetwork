@@ -21,6 +21,10 @@ namespace TransportNetwork.WebFormsApplication
         private void InitializeBusForm()
         {
             var busses = BusRepository.GetAllBusses();
+
+            if (busses.Count == 0)
+                return;
+
             foreach (var bus in busses)
             {
                 numberPlateTb.Items.Add(bus.NumberPlate);
@@ -54,7 +58,8 @@ namespace TransportNetwork.WebFormsApplication
 
             var waybill = new Waybill(bus, tour);
             var waybillRepository = new WaybillRepository();
-            waybillRepository.AddWaybill(waybill);
+            for (var count = 0; count < bus.NumberOfSeats; count++)
+                waybillRepository.AddWaybill(waybill);
 
             Close();
             var waybillForm = new WaybillsForm();

@@ -35,8 +35,6 @@ namespace TransportNetwork.DataAccessLayer.Repository
                 conn);
 
             var param = new SqlParameter();
-
-            param = new SqlParameter();
             param.ParameterName = "@numberPlate";
             param.Value = bus.NumberPlate;
             param.SqlDbType = SqlDbType.NVarChar;
@@ -95,6 +93,7 @@ namespace TransportNetwork.DataAccessLayer.Repository
                             var numberPlate = dr["numberPlate"].ToString();
                             var tourId = (int) dr["tourId"];
                             var tour = tourRepository.GetTourById(tourId);
+                            tour.SetTourId(tourId);
                             var buses = busRepository.GetAllBusses();
                             Bus bus = null;
                             foreach (var busLoop in buses)
@@ -110,9 +109,8 @@ namespace TransportNetwork.DataAccessLayer.Repository
                     }
                 }
             }
-            catch (SqlException ex)
+            catch (SqlException)
             {
-                var t = ex.Message;
             }
             finally
             {

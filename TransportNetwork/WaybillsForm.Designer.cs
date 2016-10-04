@@ -84,6 +84,7 @@
             this.listOfWaybills.Name = "listOfWaybills";
             this.listOfWaybills.Size = new System.Drawing.Size(92, 21);
             this.listOfWaybills.TabIndex = 30;
+            this.listOfWaybills.SelectedIndexChanged += new System.EventHandler(this.listOfWaybills_SelectedIndexChanged);
             // 
             // checkBox1
             // 
