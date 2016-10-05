@@ -25,17 +25,11 @@ namespace TransportNetwork.WebFormsApplication
             if (passengers == null) return;
 
             foreach (var passengerLoop in passengers)
-            {
-
                 listOfPassengers.Items.Add(passengerLoop.PassengerId);
-
-            }
 
             var passenger = passengers[0];
 
             FillForm(passenger);
-
-
 
         }
 
@@ -53,6 +47,7 @@ namespace TransportNetwork.WebFormsApplication
 
             var passenger = GetPassengerFromForm();
             PassengerRepository.UpdatePassenger(passenger);
+            UpdateForm();
 
         }
 
@@ -61,7 +56,7 @@ namespace TransportNetwork.WebFormsApplication
 
             var passenger = GetPassengerFromForm();
             PassengerRepository.AddPassenger(passenger);
-
+            UpdateForm();
         }
 
         private void Delete_Click(object sender, EventArgs e)
@@ -69,7 +64,7 @@ namespace TransportNetwork.WebFormsApplication
 
             var passenger = GetPassengerFromForm();
             PassengerRepository.DeletePassenger(passenger);
-
+            UpdateForm();
         }
 
         private void listOfPassengers_SelectedIndexChanged(object sender, EventArgs e)
@@ -92,6 +87,15 @@ namespace TransportNetwork.WebFormsApplication
             middleTb.Text = passenger.MiddleName;
             telephoneTb.Text = passenger.Telephone;
             passportTb.Text = passenger.Passport;
+
+        }
+
+        private void UpdateForm()
+        {
+
+            Close();
+            var form = new PassengerForm();
+            form.Show();
 
         }
 

@@ -139,6 +139,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="TourForm.resx">
+      <DependentUpon>TourForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="WaybillsForm.resx">
       <DependentUpon>WaybillsForm.cs</DependentUpon>
     </EmbeddedResource>
