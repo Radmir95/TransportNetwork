@@ -85,7 +85,6 @@ namespace TransportNetwork.DataAccessLayer.Repository
 
             var cmdDeletePassenger = new SqlCommand("DELETE FROM Passenger WHERE passengerId = @passengerId", conn);
 
-
             var param = new SqlParameter();
 
             param.ParameterName = "@passengerId";

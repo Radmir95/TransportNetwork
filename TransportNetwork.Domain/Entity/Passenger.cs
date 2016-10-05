@@ -33,7 +33,7 @@ namespace TransportNetwork.Domain.Entity
 
         }
 
-        internal void SetPassengerId(int passengerId)
+        public void SetPassengerId(int passengerId)
         {
             PassengerId = passengerId;
         }
