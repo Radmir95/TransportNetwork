@@ -58,6 +58,7 @@ namespace TransportNetwork.WebFormsApplication
             var prevTour = waybills[0].Tour.TourId;
 
             var waybillId = new List<int>();
+            waybillId.Add(1);
 
             foreach (var waybill in waybills)
             {
@@ -90,7 +91,20 @@ namespace TransportNetwork.WebFormsApplication
 
             var waybills = _waybillRepository.GetAllWaybills();
             var waybill = waybills[listOfWaybills.SelectedIndex];
-            //TODO
+
+            var bus = waybill.Bus;
+            var tour = waybill.Tour;
+
+            numberPlateTb.Text = bus.NumberPlate;
+            markTb.Text = bus.Brand;
+            modelTb.Text = bus.Model;
+            numberOfSeatsTb.Text = bus.NumberOfSeats.ToString();
+
+            dataOfDepartureTb.Text = tour.TimeOfDeparture.Value.ToLongDateString();
+            dateOfArrivalTb.Text = tour.TimeOfArrival.Value.ToLongDateString();
+            distanceTb.Text = tour.Distance.ToString();
+            pointOfArrival.Text = tour.PointOfArrival;
+            pointOfDepartureTb.Text = tour.PointOfDeparture;
 
         }
     }

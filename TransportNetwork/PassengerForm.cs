@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using TransportNetwork.DataAccessLayer.Repository;
+using TransportNetwork.Domain.Entity;
 
 namespace TransportNetwork.WebFormsApplication
 {
@@ -19,9 +13,33 @@ namespace TransportNetwork.WebFormsApplication
         public PassengerForm()
         {
             InitializeComponent();
+            InitializeForm();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void InitializeForm()
+        {
+            PassengerRepository = new PassengerRepository();
+
+            var passengers = PassengerRepository.GetAllPassengers();
+
+            if (passengers == null) return;
+
+            foreach (var passengerLoop in passengers)
+            {
+
+                listOfPassengers.Items.Add(passengerLoop.PassengerId);
+
+            }
+
+            var passenger = passengers[0];
+
+            FillForm(passenger);
+
+
+
+        }
+
+        private void Exit_Click(object sender, EventArgs e)
         {
 
             Close();
@@ -50,5 +68,29 @@ namespace TransportNetwork.WebFormsApplication
 
 
         }
+
+        private void listOfPassengers_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            var passengers = PassengerRepository.GetAllPassengers();
+
+            var passenger = passengers[listOfPassengers.SelectedIndex];
+
+            FillForm(passenger);
+
+
+        }
+
+        private void FillForm(Passenger passenger)
+        {
+
+            nameTb.Text = passenger.FirstName;
+            surnameTb.Text = passenger.SurName;
+            middleTb.Text = passenger.MiddleName;
+            telephoneTb.Text = passenger.Telephone;
+            passportTb.Text = passenger.Passport;
+
+        }
+
     }
 }

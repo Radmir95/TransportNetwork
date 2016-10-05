@@ -39,11 +39,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.passportTb = new System.Windows.Forms.TextBox();
-            this.experienceTb = new System.Windows.Forms.TextBox();
+            this.telephoneTb = new System.Windows.Forms.TextBox();
             this.middleTb = new System.Windows.Forms.TextBox();
             this.surnameTb = new System.Windows.Forms.TextBox();
             this.nameTb = new System.Windows.Forms.TextBox();
-            this.listOfEmployees = new System.Windows.Forms.ComboBox();
+            this.listOfPassengers = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // button4
@@ -54,7 +54,7 @@
             this.button4.TabIndex = 58;
             this.button4.Text = "Выход";
             this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.button4.Click += new System.EventHandler(this.Exit_Click);
             // 
             // label13
             // 
@@ -116,7 +116,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(9, 216);
+            this.label8.Location = new System.Drawing.Point(9, 212);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(52, 13);
             this.label8.TabIndex = 48;
@@ -147,12 +147,12 @@
             this.passportTb.Size = new System.Drawing.Size(121, 20);
             this.passportTb.TabIndex = 38;
             // 
-            // experienceTb
+            // telephoneTb
             // 
-            this.experienceTb.Location = new System.Drawing.Point(106, 209);
-            this.experienceTb.Name = "experienceTb";
-            this.experienceTb.Size = new System.Drawing.Size(121, 20);
-            this.experienceTb.TabIndex = 35;
+            this.telephoneTb.Location = new System.Drawing.Point(106, 209);
+            this.telephoneTb.Name = "telephoneTb";
+            this.telephoneTb.Size = new System.Drawing.Size(121, 20);
+            this.telephoneTb.TabIndex = 35;
             // 
             // middleTb
             // 
@@ -175,13 +175,14 @@
             this.nameTb.Size = new System.Drawing.Size(121, 20);
             this.nameTb.TabIndex = 32;
             // 
-            // listOfEmployees
+            // listOfPassengers
             // 
-            this.listOfEmployees.FormattingEnabled = true;
-            this.listOfEmployees.Location = new System.Drawing.Point(230, 12);
-            this.listOfEmployees.Name = "listOfEmployees";
-            this.listOfEmployees.Size = new System.Drawing.Size(121, 21);
-            this.listOfEmployees.TabIndex = 31;
+            this.listOfPassengers.FormattingEnabled = true;
+            this.listOfPassengers.Location = new System.Drawing.Point(230, 12);
+            this.listOfPassengers.Name = "listOfPassengers";
+            this.listOfPassengers.Size = new System.Drawing.Size(121, 21);
+            this.listOfPassengers.TabIndex = 31;
+            this.listOfPassengers.SelectedIndexChanged += new System.EventHandler(this.listOfPassengers_SelectedIndexChanged);
             // 
             // PassengerForm
             // 
@@ -199,11 +200,11 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.passportTb);
-            this.Controls.Add(this.experienceTb);
+            this.Controls.Add(this.telephoneTb);
             this.Controls.Add(this.middleTb);
             this.Controls.Add(this.surnameTb);
             this.Controls.Add(this.nameTb);
-            this.Controls.Add(this.listOfEmployees);
+            this.Controls.Add(this.listOfPassengers);
             this.Name = "PassengerForm";
             this.Text = "PassengerForm";
             this.ResumeLayout(false);
@@ -224,10 +225,10 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox passportTb;
-        private System.Windows.Forms.TextBox experienceTb;
+        private System.Windows.Forms.TextBox telephoneTb;
         private System.Windows.Forms.TextBox middleTb;
         private System.Windows.Forms.TextBox surnameTb;
         private System.Windows.Forms.TextBox nameTb;
-        private System.Windows.Forms.ComboBox listOfEmployees;
+        private System.Windows.Forms.ComboBox listOfPassengers;
     }
 }
