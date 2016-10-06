@@ -37,6 +37,7 @@
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
+    <Reference Include="System.XML" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConnectionContext.cs" />
@@ -56,6 +57,7 @@
     <Compile Include="Repository\UserPermissionRepository.cs" />
     <Compile Include="Repository\WaybillRepository.cs" />
     <Compile Include="Test.cs" />
+    <Compile Include="XMLRepository\XMLWriter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="TransportNetwork.bak" />
