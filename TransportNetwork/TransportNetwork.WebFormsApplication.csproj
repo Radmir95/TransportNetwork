@@ -79,6 +79,7 @@
     </Compile>
     <Compile Include="Helpers\DistanceBetweenCities.cs" />
     <Compile Include="Helpers\EmployeeHelper.cs" />
+    <Compile Include="Helpers\TourHelper.cs" />
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>

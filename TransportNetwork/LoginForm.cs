@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
 using TransportNetwork.DataAccessLayer.Repository;
-using TransportNetwork.DataAccessLayer.XMLRepository;
 using TransportNetwork.WebFormsApplication.Properties;
 
 namespace TransportNetwork.WebFormsApplication
@@ -16,10 +15,10 @@ namespace TransportNetwork.WebFormsApplication
         private void enterButton_Click(object sender, EventArgs e)
         {
 
-            var writeInXML = new XMLWriter();
-            writeInXML.WriteInXMLFile();
+            /*var writeInXML = new XMLWriter();
+            writeInXML.WriteInXMLFile();*/
 
-           /* var login = loginTb.Text;
+            var login = loginTb.Text;
             var password = passwordTb.Text;
             var userPermissionRepository = new UserPermissionRepository();
             var permission = userPermissionRepository.CheckUserLoginAndPassword(login, password);
@@ -46,7 +45,9 @@ namespace TransportNetwork.WebFormsApplication
                         employeeForm.Show();
                         break;
                 }
-            }*/
+            }
         }
+
+
     }
 }

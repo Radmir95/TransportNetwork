@@ -22,7 +22,7 @@ namespace TransportNetwork.WebFormsApplication
 
             var passengers = PassengerRepository.GetAllPassengers();
 
-            if (passengers == null) return;
+            if (passengers.Count == 0) return;
 
             foreach (var passengerLoop in passengers)
                 listOfPassengers.Items.Add(passengerLoop.PassengerId);
@@ -102,7 +102,7 @@ namespace TransportNetwork.WebFormsApplication
         private Passenger GetPassengerFromForm()
         {
 
-            var passengerId = listOfPassengers.SelectedIndex;
+            var passengerId = listOfPassengers.SelectedIndex + 1;
             var firstName = nameTb.Text;
             var surName = surnameTb.Text;
             var middleName = middleTb.Text;
