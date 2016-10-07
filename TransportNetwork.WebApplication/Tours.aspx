@@ -10,7 +10,7 @@
     <form id="form1" runat="server">
         <div>
 
-            <asp:ListView ID="ListOfProducts" runat="server" ItemType="NetShop.Domain.Entity.Product" ItemPlaceholderID="itemPlaceholder">
+            <asp:ListView ID="ListOfProducts" runat="server" ItemType="TransportNetwork.Domain.Entity.Waybill" ItemPlaceholderID="itemPlaceholder">
 
                 <LayoutTemplate>
 
@@ -36,11 +36,11 @@
                 <ItemTemplate>
                     <tr>
                         <td>
-                            <asp:Label runat="server" ID="LabelIdProduct" Visible="False" Text="<%#:Item.ProductId %>" /></td>
+                            <asp:Label runat="server" ID="LabelIdProduct" Visible="False" Text="<%#:Item.Tour.TimeOfDeparture %>" /></td>
                         <td>
-                            <asp:Label runat="server" ID="LabelName" Text="<%#:Item.Name %>" /></td>
+                            <asp:Label runat="server" ID="LabelName" Text="<%#:Item.Tour.TimeOfArrival %>" /></td>
                         <td>
-                            <asp:Label runat="server" ID="LabelCost" Text="<%#:Item.Cost %>" /></td>
+                            <asp:Label runat="server" ID="LabelCost" Text="<%#:Item.Tour.Distance %>" /></td>
                         <td>
                             <asp:TextBox runat="server" ID="TextBoxCount" MaxLength="2"></asp:TextBox></td>
                         <td>

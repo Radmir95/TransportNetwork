@@ -405,6 +405,16 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TransportNetwork.DataAccessLayer\TransportNetwork.DataAccessLayer.csproj">
+      <Project>{CDA7AC1F-BB19-4862-AB12-FBB423C51657}</Project>
+      <Name>TransportNetwork.DataAccessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TransportNetwork.Domain\TransportNetwork.Domain.csproj">
+      <Project>{56dfe101-0265-43a1-b9c9-be03ae686b68}</Project>
+      <Name>TransportNetwork.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
