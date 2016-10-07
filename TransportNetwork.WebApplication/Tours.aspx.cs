@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace TransportNetwork.WebApplication
 {
-    public partial class Login : System.Web.UI.Page
+    public partial class Tours : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

@@ -26,15 +26,12 @@ namespace TransportNetwork.WebFormsApplication
 
             foreach (var passengerLoop in passengers)
             {
-
                 listOfPassengers.Items.Add(passengerLoop.PassengerId);
-
             }
 
             var passenger = passengers[0];
 
             FillForm(passenger);
-
 
 
         }
