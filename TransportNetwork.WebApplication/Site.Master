@@ -25,10 +25,7 @@
                         <strong>Navigation</strong>
                         <ul>
                             <li>
-                                <asp:Button ID="RegistrationButton" type="button" name="Registration" class="btn btn-default btn-lg spaces" OnClick="Registration_OnClick" Text="Регистрация" runat="server" />
-                            </li>
-                            <li>
-                                <asp:Button ID="LoginButton" type="button" name="Login" Text="Вход" class="btn btn-default btn-lg spaces" OnClick="Login_OnClick" runat="server" />
+                                <asp:Button ID="RegistrationButton" type="button" name="Registration" class="btn btn-default btn-lg spaces" OnClick="Registration_OnClick" Text="Туры" runat="server" />
                             </li>
                         </ul>
                     </div>
