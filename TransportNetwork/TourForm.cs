@@ -16,5 +16,12 @@ namespace TransportNetwork.WebFormsApplication
         {
             InitializeComponent();
         }
+
+        private void SellSeat_Click(object sender, EventArgs e)
+        {
+
+
+
+        }
     }
 }

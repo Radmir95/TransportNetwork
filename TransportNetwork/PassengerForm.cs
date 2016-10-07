@@ -25,14 +25,11 @@ namespace TransportNetwork.WebFormsApplication
             if (passengers == null) return;
 
             foreach (var passengerLoop in passengers)
-            {
                 listOfPassengers.Items.Add(passengerLoop.PassengerId);
-            }
 
             var passenger = passengers[0];
 
             FillForm(passenger);
-
 
         }
 
@@ -45,25 +42,29 @@ namespace TransportNetwork.WebFormsApplication
 
         }
 
-        private void update_Click(object sender, EventArgs e)
+        private void Update_Click(object sender, EventArgs e)
         {
 
-
+            var passenger = GetPassengerFromForm();
+            PassengerRepository.UpdatePassenger(passenger);
+            UpdateForm();
 
         }
 
-        private void add_Click(object sender, EventArgs e)
+        private void Add_Click(object sender, EventArgs e)
         {
 
-
-
+            var passenger = GetPassengerFromForm();
+            PassengerRepository.AddPassenger(passenger);
+            UpdateForm();
         }
 
-        private void delete_Click(object sender, EventArgs e)
+        private void Delete_Click(object sender, EventArgs e)
         {
 
-
-
+            var passenger = GetPassengerFromForm();
+            PassengerRepository.DeletePassenger(passenger);
+            UpdateForm();
         }
 
         private void listOfPassengers_SelectedIndexChanged(object sender, EventArgs e)
@@ -87,6 +88,31 @@ namespace TransportNetwork.WebFormsApplication
             telephoneTb.Text = passenger.Telephone;
             passportTb.Text = passenger.Passport;
 
+        }
+
+        private void UpdateForm()
+        {
+
+            Close();
+            var form = new PassengerForm();
+            form.Show();
+
+        }
+
+        private Passenger GetPassengerFromForm()
+        {
+
+            var passengerId = listOfPassengers.SelectedIndex;
+            var firstName = nameTb.Text;
+            var surName = surnameTb.Text;
+            var middleName = middleTb.Text;
+            var telephone = telephoneTb.Text;
+            var passport = passportTb.Text;
+
+            var passenger = new Passenger(firstName, surName, middleName, passport, telephone);
+            passenger.SetPassengerId(passengerId);
+
+            return passenger;
         }
 
     }
