@@ -24,9 +24,6 @@ namespace TransportNetwork.WebFormsApplication
 
             if (passengers.Count == 0) return;
 
-            foreach (var passengerLoop in passengers)
-                listOfPassengers.Items.Add(passengerLoop.PassengerId);
-
             var passenger = passengers[0];
 
             FillForm(passenger);
@@ -42,41 +39,12 @@ namespace TransportNetwork.WebFormsApplication
 
         }
 
-        private void Update_Click(object sender, EventArgs e)
-        {
-
-            var passenger = GetPassengerFromForm();
-            PassengerRepository.UpdatePassenger(passenger);
-            UpdateForm();
-
-        }
-
         private void Add_Click(object sender, EventArgs e)
         {
 
             var passenger = GetPassengerFromForm();
             PassengerRepository.AddPassenger(passenger);
             UpdateForm();
-        }
-
-        private void Delete_Click(object sender, EventArgs e)
-        {
-
-            var passenger = GetPassengerFromForm();
-            PassengerRepository.DeletePassenger(passenger);
-            UpdateForm();
-        }
-
-        private void listOfPassengers_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-            var passengers = PassengerRepository.GetAllPassengers();
-
-            var passenger = passengers[listOfPassengers.SelectedIndex];
-
-            FillForm(passenger);
-
-
         }
 
         private void FillForm(Passenger passenger)
@@ -102,7 +70,6 @@ namespace TransportNetwork.WebFormsApplication
         private Passenger GetPassengerFromForm()
         {
 
-            var passengerId = listOfPassengers.SelectedIndex + 1;
             var firstName = nameTb.Text;
             var surName = surnameTb.Text;
             var middleName = middleTb.Text;
@@ -110,7 +77,6 @@ namespace TransportNetwork.WebFormsApplication
             var passport = passportTb.Text;
 
             var passenger = new Passenger(firstName, surName, middleName, passport, telephone);
-            passenger.SetPassengerId(passengerId);
 
             return passenger;
         }

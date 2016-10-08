@@ -32,8 +32,6 @@
             this.listOfTours = new System.Windows.Forms.ComboBox();
             this.timeOfArrivalTb = new System.Windows.Forms.MaskedTextBox();
             this.timeOfDepartureTb = new System.Windows.Forms.MaskedTextBox();
-            this.pointOfArrivalList = new System.Windows.Forms.ComboBox();
-            this.pointOfDepartureList = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
             this.distanceTb = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -44,6 +42,8 @@
             this.freeSeatsTb = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.pointOfDepartureTb = new System.Windows.Forms.MaskedTextBox();
+            this.pointOfArrivalTb = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -78,33 +78,6 @@
             this.timeOfDepartureTb.Size = new System.Drawing.Size(100, 20);
             this.timeOfDepartureTb.TabIndex = 90;
             this.timeOfDepartureTb.ValidatingType = typeof(System.DateTime);
-            // 
-            // pointOfArrivalList
-            // 
-            this.pointOfArrivalList.FormattingEnabled = true;
-            this.pointOfArrivalList.Items.AddRange(new object[] {
-            "Москва",
-            "Альметьевск",
-            "УФА",
-            "Набережные челны",
-            "Саратов",
-            "Санкт-Петербург",
-            "Чебоксары"});
-            this.pointOfArrivalList.Location = new System.Drawing.Point(164, 187);
-            this.pointOfArrivalList.Name = "pointOfArrivalList";
-            this.pointOfArrivalList.Size = new System.Drawing.Size(100, 21);
-            this.pointOfArrivalList.TabIndex = 89;
-            // 
-            // pointOfDepartureList
-            // 
-            this.pointOfDepartureList.FormattingEnabled = true;
-            this.pointOfDepartureList.Items.AddRange(new object[] {
-            "Казань"});
-            this.pointOfDepartureList.Location = new System.Drawing.Point(165, 152);
-            this.pointOfDepartureList.Name = "pointOfDepartureList";
-            this.pointOfDepartureList.Size = new System.Drawing.Size(99, 21);
-            this.pointOfDepartureList.TabIndex = 88;
-            this.pointOfDepartureList.Text = "Казань";
             // 
             // label13
             // 
@@ -193,18 +166,34 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.SellSeat_Click);
             // 
+            // pointOfDepartureTb
+            // 
+            this.pointOfDepartureTb.Location = new System.Drawing.Point(165, 187);
+            this.pointOfDepartureTb.Name = "pointOfDepartureTb";
+            this.pointOfDepartureTb.Size = new System.Drawing.Size(100, 20);
+            this.pointOfDepartureTb.TabIndex = 95;
+            this.pointOfDepartureTb.ValidatingType = typeof(System.DateTime);
+            // 
+            // pointOfArrivalTb
+            // 
+            this.pointOfArrivalTb.Location = new System.Drawing.Point(164, 155);
+            this.pointOfArrivalTb.Name = "pointOfArrivalTb";
+            this.pointOfArrivalTb.Size = new System.Drawing.Size(100, 20);
+            this.pointOfArrivalTb.TabIndex = 96;
+            this.pointOfArrivalTb.ValidatingType = typeof(System.DateTime);
+            // 
             // TourForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(389, 360);
+            this.Controls.Add(this.pointOfArrivalTb);
+            this.Controls.Add(this.pointOfDepartureTb);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.freeSeatsTb);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.timeOfArrivalTb);
             this.Controls.Add(this.timeOfDepartureTb);
-            this.Controls.Add(this.pointOfArrivalList);
-            this.Controls.Add(this.pointOfDepartureList);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.distanceTb);
             this.Controls.Add(this.label9);
@@ -227,8 +216,6 @@
         private System.Windows.Forms.ComboBox listOfTours;
         private System.Windows.Forms.MaskedTextBox timeOfArrivalTb;
         private System.Windows.Forms.MaskedTextBox timeOfDepartureTb;
-        private System.Windows.Forms.ComboBox pointOfArrivalList;
-        private System.Windows.Forms.ComboBox pointOfDepartureList;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox distanceTb;
         private System.Windows.Forms.Label label9;
@@ -239,5 +226,7 @@
         private System.Windows.Forms.TextBox freeSeatsTb;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.MaskedTextBox pointOfDepartureTb;
+        private System.Windows.Forms.MaskedTextBox pointOfArrivalTb;
     }
 }
